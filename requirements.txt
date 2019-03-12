@@ -1,0 +1,4 @@
+Django
+pymysql
+django_mysql
+cryptography
