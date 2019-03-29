@@ -80,7 +80,7 @@ DATABASES = {
 		'NAME': 'mysql',
 		'USER': 'root',
 		'PASSWORD': 'itsasecret',
-		'HOST': 'db',
+		'HOST': '127.0.0.1',
 		'PORT': '3306'
 	}
 }
@@ -123,3 +123,20 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+
+EMAIL_HOST = 'smtp.sina.com'
+# 设置端口号，为数字
+EMAIL_PORT = 25
+#设置发件人邮箱
+EMAIL_HOST_USER = 'thu_dashboard@sina.com'
+# 设置发件人 授权码
+EMAIL_HOST_PASSWORD = 'itsasecret'
+# 设置是否启用安全链接
+EMAIL_USER_TLS = True
+
+# 以上这个配置信息，Django会自动读取，
+# 使用账号以及授权码进行登录，
+# 如果登录成功，可以发送邮件

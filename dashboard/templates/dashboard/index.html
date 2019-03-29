@@ -1,0 +1,10 @@
+{% extends 'dashboard/base.html' %}
+
+{% block title %}Thu-cotk_dashboard{% endblock %}
+{% block content %}
+    {% if request.session.is_login %}
+    <h1>你好,{{ request.session.username }}！欢迎回来！</h1>
+    {% else %}
+    <h1>请登录</h1>
+    {% endif %}
+{% endblock %}
