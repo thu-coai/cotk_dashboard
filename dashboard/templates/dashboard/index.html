@@ -1,10 +1,53 @@
 {% extends 'dashboard/base.html' %}
-
-{% block title %}Thu-cotk_dashboard{% endblock %}
+{% block title %}
+    Thu-cotk_dashboard
+{% endblock %}
 {% block content %}
     {% if request.session.is_login %}
-    <h1>你好,{{ request.session.username }}！欢迎回来！</h1>
-    {% else %}
-    <h1>请登录</h1>
-    {% endif %}
-{% endblock %}
+   <div class="container">
+    <strong>训练记录</strong>
+    <table
+  id="table"
+  data-toggle="table"
+  data-url="/show"
+  data-height="560"
+  data-search="true"
+  data-show-refresh="true"
+  data-show-toggle="true"
+  data-show-fullscreen="true"
+  data-show-columns="true"
+  data-detail-view="true"
+  data-detail-formatter="detailFormatter"
+  data-minimum-count-columns="2"
+  data-show-pagination-switch="true"
+  data-pagination="true"
+  data-page-list="[10, 25, 50, 100, ALL]"
+  data-side-pagination="client"
+  data-buttons-align="left"
+  data-search-align="left">
+  <thead>
+    <tr>
+      <th data-field="id">ID</th>
+      <th data-field="git_user">Git_User</th>
+      <th data-field="git_repo">Git_Repository</th>
+      <th data-field="git_commit">Git_commit</th>
+      <th data-field="result">Git_result</th>
+    </tr>
+  </thead>
+</table>
+   </div>
+   {% else %}
+  <h1>登陆后查看界面</h1>
+  {% endif %}
+  {% endblock %}
+  {% block script %}
+  <script>
+  function detailFormatter(index, row) {
+      var html = [];
+      $.each(row['other_config'], function (key, value) {
+          html.push('<p><b>' + key + ':</b> ' + value + '</p>')
+      });
+      return html.join('')
+  }
+    </script>
+  {% endblock %}

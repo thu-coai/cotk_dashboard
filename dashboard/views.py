@@ -99,7 +99,10 @@ def forget(request):
 	return render(request,'dashboard/forget.html',locals())
 
 def send(request):
-	same_email =  Check.objects.get(email=request.GET['email'])
+	try:
+		same_email =  Check.objects.get(email=request.GET['email'])
+	except Check.DoesNotExist:
+		same_email = None
 	check_num = generate_check()
 	if (same_email):
 		same_email.check = check_num
@@ -144,22 +147,30 @@ def upload(request):
 	return HttpResponse(json.dumps({"code": "ok", "id": r.id}))
 
 def show(request):
-	if "id" not in request.GET:
-		return HttpResponseBadRequest("ID not existed")
-	try:
-		r = Record.objects.get(id=request.GET["id"])
-	except ObjectDoesNotExist as err:
-		return HttpResponseBadRequest("ID not existed")
+	# print(request.GET)
+	# if "id" not in request.GET:
+	# 	return HttpResponseBadRequest("ID not existed")
+	# try:
+	# 	r = Record.objects.get(id=request.GET["id"])
+	# except ObjectDoesNotExist as err:
+	# 	return HttpResponseBadRequest("ID not existed")
+    #
+	# res = {
+	# 	"git_user": r.git_user,
+	# 	"git_repo": r.git_repo,
+	# 	"git_commit": r.git_commit,
+	# 	"result": r.result,
+	# 	"other_config": r.other_config
+	# }
+	#return HttpResponse(json.dumps(res))
+	if request.session.get('is_login',None):
+		return HttpResponse(json.dumps({"total":2,"rows": [{"id":1,"git_user": "qsz", "git_repo": "repo_0", "git_commit": "commit_0",
+											  "result": "result0","other_config": {"key1":"item1","key2":"item2"}},
 
-	res = {
-		"git_user": r.git_user,
-		"git_repo": r.git_repo,
-		"git_commit": r.git_commit,
-		"result": r.result,
-		"other_config": r.other_config
-	}
-	return HttpResponse(json.dumps(res))
-
+											 {"id":2,"git_user": "wjq", "git_repo": "repo_2", "git_commit": "commit_2",
+											  "result": "result2", "other_config": {"key1": "item1", "key2": "item2"}}]}))
+	else:
+		return redirect('/login')
 def generate_token():
 	ran_str = ''.join(random.sample(string.ascii_letters + string.digits, 8))
 	return ran_str
