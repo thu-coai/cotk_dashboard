@@ -19,7 +19,7 @@ services:
     stdin_open: true
     tty: true
     volumes:
-      - .:/var/www/cotk_dashboard
+      - ./:/var/www/cotk_dashboard/
     ports:
       - "8000:8000"
     links:

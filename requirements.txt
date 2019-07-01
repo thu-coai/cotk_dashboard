@@ -1,4 +1,4 @@
 Django
-pymysql
+mysqlclient
 django_mysql
 cryptography
