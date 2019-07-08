@@ -37,6 +37,7 @@ INSTALLED_APPS = [
 	'django.contrib.sessions',
 	'django.contrib.messages',
 	'django.contrib.staticfiles',
+	'bootstrap4',
 	'dashboard.apps.DashboardConfig'
 ]
 
@@ -108,9 +109,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-Hans'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
@@ -140,3 +141,6 @@ EMAIL_USER_TLS = True
 # 以上这个配置信息，Django会自动读取，
 # 使用账号以及授权码进行登录，
 # 如果登录成功，可以发送邮件
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'

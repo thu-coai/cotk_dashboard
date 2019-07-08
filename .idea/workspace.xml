@@ -2,16 +2,263 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b27b1571-2354-41b7-a386-ca639c0e5c34" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/base.html" afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/base.html" />
-      <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/forget.html" afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/forget.html" />
-      <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/index.html" afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/index.html" />
-      <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/login.html" afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/login.html" />
-      <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/register.html" afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/register.html" />
-      <change beforePath="$PROJECT_DIR$/dashboard/views.py" afterPath="$PROJECT_DIR$/dashboard/views.py" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Will.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bootstrap.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/templates/registration/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bootstrap-4.3.1-dist/css/bootstrap-grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bootstrap-4.3.1-dist/css/bootstrap-grid.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bootstrap-4.3.1-dist/css/bootstrap-grid.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bootstrap-4.3.1-dist/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bootstrap-4.3.1-dist/css/bootstrap-reboot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bootstrap-4.3.1-dist/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bootstrap-4.3.1-dist/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bootstrap-4.3.1-dist/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bootstrap-4.3.1-dist/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bootstrap-4.3.1-dist/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bootstrap-4.3.1-dist/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bootstrap-4.3.1-dist/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bootstrap-4.3.1-dist/js/bootstrap.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bootstrap-4.3.1-dist/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bootstrap-4.3.1-dist/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bootstrap-4.3.1-dist/js/bootstrap.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bootstrap-4.3.1-dist/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bootstrap-4.3.1-dist/js/bootstrap.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fontawesome/css/all.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fontawesome/css/all.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/cotk_dashboard.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/cotk_dashboard.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cotk_dashboard/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/cotk_dashboard/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cotk_dashboard/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/cotk_dashboard/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/form.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/form.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/css/bootstrap-theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/css/bootstrap-theme.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/css/bootstrap.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/css/bootstrap.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/js/npm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/bootstrap-table-locale-all.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/bootstrap-table-locale-all.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/bootstrap-table.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/bootstrap-table.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/bootstrap-table.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/bootstrap-table.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/accent-neutralise/bootstrap-table-accent-neutralise.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/accent-neutralise/bootstrap-table-accent-neutralise.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/addrbar/bootstrap-table-addrbar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/addrbar/bootstrap-table-addrbar.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/auto-refresh/bootstrap-table-auto-refresh.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/auto-refresh/bootstrap-table-auto-refresh.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/cookie/bootstrap-table-cookie.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/cookie/bootstrap-table-cookie.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/copy-rows/bootstrap-table-copy-rows.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/copy-rows/bootstrap-table-copy-rows.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/defer-url/bootstrap-table-defer-url.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/defer-url/bootstrap-table-defer-url.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/editable/bootstrap-table-editable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/editable/bootstrap-table-editable.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/export/bootstrap-table-export.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/export/bootstrap-table-export.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/filter-control/bootstrap-table-filter-control.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/filter-control/bootstrap-table-filter-control.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/filter-control/bootstrap-table-filter-control.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/filter-control/bootstrap-table-filter-control.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/fixed-columns/bootstrap-table-fixed-columns.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/fixed-columns/bootstrap-table-fixed-columns.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/fixed-columns/bootstrap-table-fixed-columns.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/fixed-columns/bootstrap-table-fixed-columns.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/group-by-v2/bootstrap-table-group-by.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/group-by-v2/bootstrap-table-group-by.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/group-by-v2/bootstrap-table-group-by.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/group-by-v2/bootstrap-table-group-by.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/group-by/bootstrap-table-group-by.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/group-by/bootstrap-table-group-by.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/group-by/bootstrap-table-group-by.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/group-by/bootstrap-table-group-by.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/i18n-enhance/bootstrap-table-i18n-enhance.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/i18n-enhance/bootstrap-table-i18n-enhance.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/key-events/bootstrap-table-key-events.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/key-events/bootstrap-table-key-events.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/mobile/bootstrap-table-mobile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/mobile/bootstrap-table-mobile.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/multi-column-toggle/bootstrap-table-multi-toggle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/multi-column-toggle/bootstrap-table-multi-toggle.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/multiple-search/bootstrap-table-multiple-search.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/multiple-search/bootstrap-table-multiple-search.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/multiple-selection-row/bootstrap-table-multiple-selection-row.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/multiple-selection-row/bootstrap-table-multiple-selection-row.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/multiple-selection-row/bootstrap-table-multiple-selection-row.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/multiple-selection-row/bootstrap-table-multiple-selection-row.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/multiple-sort/bootstrap-table-multiple-sort.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/multiple-sort/bootstrap-table-multiple-sort.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/natural-sorting/bootstrap-table-natural-sorting.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/natural-sorting/bootstrap-table-natural-sorting.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/page-jump-to/bootstrap-table-page-jump-to.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/page-jump-to/bootstrap-table-page-jump-to.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/page-jump-to/bootstrap-table-page-jump-to.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/page-jump-to/bootstrap-table-page-jump-to.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/pipeline/bootstrap-table-pipeline.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/pipeline/bootstrap-table-pipeline.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/print/bootstrap-table-print.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/print/bootstrap-table-print.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/reorder-columns/bootstrap-table-reorder-columns.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/reorder-columns/bootstrap-table-reorder-columns.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/reorder-rows/bootstrap-table-reorder-rows.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/reorder-rows/bootstrap-table-reorder-rows.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/reorder-rows/bootstrap-table-reorder-rows.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/reorder-rows/bootstrap-table-reorder-rows.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/resizable/bootstrap-table-resizable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/resizable/bootstrap-table-resizable.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/select2-filter/bootstrap-table-select2-filter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/select2-filter/bootstrap-table-select2-filter.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/sticky-header/bootstrap-table-sticky-header.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/sticky-header/bootstrap-table-sticky-header.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/sticky-header/bootstrap-table-sticky-header.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/sticky-header/bootstrap-table-sticky-header.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/toolbar/bootstrap-table-toolbar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/toolbar/bootstrap-table-toolbar.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/tree-column/bootstrap-table-tree-column.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/tree-column/bootstrap-table-tree-column.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/tree-column/bootstrap-table-tree-column.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/tree-column/bootstrap-table-tree-column.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/treegrid/bootstrap-table-treegrid.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/extensions/treegrid/bootstrap-table-treegrid.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-af-ZA.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-af-ZA.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-ar-SA.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-ar-SA.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-ca-ES.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-ca-ES.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-cs-CZ.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-cs-CZ.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-da-DK.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-da-DK.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-de-DE.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-de-DE.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-el-GR.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-el-GR.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-en-US.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-en-US.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-es-AR.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-es-AR.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-es-CL.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-es-CL.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-es-CR.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-es-CR.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-es-ES.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-es-ES.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-es-MX.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-es-MX.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-es-NI.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-es-NI.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-es-SP.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-es-SP.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-et-EE.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-et-EE.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-eu-EU.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-eu-EU.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-fa-IR.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-fa-IR.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-fi-FI.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-fi-FI.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-fr-BE.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-fr-BE.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-fr-FR.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-fr-FR.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-he-IL.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-he-IL.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-hr-HR.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-hr-HR.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-hu-HU.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-hu-HU.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-id-ID.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-id-ID.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-it-IT.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-it-IT.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-ja-JP.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-ja-JP.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-ka-GE.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-ka-GE.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-ko-KR.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-ko-KR.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-ms-MY.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-ms-MY.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-nb-NO.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-nb-NO.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-nl-NL.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-nl-NL.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-pl-PL.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-pl-PL.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-pt-BR.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-pt-BR.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-pt-PT.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-pt-PT.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-ro-RO.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-ro-RO.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-ru-RU.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-ru-RU.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-sk-SK.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-sk-SK.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-sv-SE.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-sv-SE.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-th-TH.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-th-TH.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-tr-TR.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-tr-TR.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-uk-UA.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-uk-UA.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-ur-PK.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-ur-PK.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-uz-Latn-UZ.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-uz-Latn-UZ.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-vi-VN.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-vi-VN.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-zh-CN.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-zh-CN.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-zh-TW.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/locale/bootstrap-table-zh-TW.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/themes/bulma/bootstrap-table-bulma.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/themes/bulma/bootstrap-table-bulma.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/themes/bulma/bootstrap-table-bulma.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/themes/bulma/bootstrap-table-bulma.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/themes/foundation/bootstrap-table-foundation.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/themes/foundation/bootstrap-table-foundation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/themes/foundation/bootstrap-table-foundation.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/themes/foundation/bootstrap-table-foundation.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/themes/materialize/bootstrap-table-materialize.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/themes/materialize/bootstrap-table-materialize.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/themes/materialize/bootstrap-table-materialize.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/themes/materialize/bootstrap-table-materialize.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/themes/semantic/bootstrap-table-semantic.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/themes/semantic/bootstrap-table-semantic.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/themes/semantic/bootstrap-table-semantic.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-table/themes/semantic/bootstrap-table-semantic.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/login.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,36 +269,86 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dashboard/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1561">
-              <caret line="166" column="40" lean-forward="true" selection-start-line="166" selection-start-column="40" selection-end-line="166" selection-end-column="40" />
-              <folding>
-                <element signature="e#0#44#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="638">
+              <caret line="214" column="36" selection-start-line="214" selection-start-column="36" selection-end-line="214" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dashboard/form.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dashboard/templates/registration/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="15" column="39" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cotk_dashboard/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2610">
+              <caret line="145" column="2" selection-start-line="145" selection-start-column="2" selection-end-line="145" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="6" column="25" lean-forward="false" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
-              <folding />
+            <state relative-caret-position="738">
+              <caret line="41" column="42" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dashboard/urls.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cotk_dashboard/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="342">
+              <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
               <folding>
-                <element signature="e#0#28#0" expanded="true" />
+                <element signature="e#638#670#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/bootstrap.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="12" selection-start-column="12" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="576">
+              <caret line="32" column="63" selection-start-line="32" selection-start-column="63" selection-end-line="32" selection-end-column="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/css/login.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
@@ -68,7 +365,16 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>session</find>
+      <find>wjq</find>
+      <find>first_name</find>
+      <find>table</find>
+      <find>fa-plus</find>
+      <find>TIME</find>
+      <find>AUTH</find>
     </findStrings>
+    <dirStrings>
+      <dir>C:\Users\Will\PycharmProjects\cotk_dashboard</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -76,49 +382,37 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/static/css/login.css" />
         <option value="$PROJECT_DIR$/dashboard/admin.py" />
-        <option value="$PROJECT_DIR$/cotk_dashboard/settings.py" />
-        <option value="$PROJECT_DIR$/dashboard/form.py" />
         <option value="$PROJECT_DIR$/dashboard/models.py" />
-        <option value="$PROJECT_DIR$/dashboard/templates/dashboard/register.html" />
         <option value="$PROJECT_DIR$/dashboard/templates/dashboard/test.html" />
-        <option value="$PROJECT_DIR$/dashboard/templates/dashboard/base.html" />
         <option value="$PROJECT_DIR$/dashboard/templates/dashboard/forget.html" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/dashboard/form.py" />
+        <option value="$PROJECT_DIR$/dashboard/templates/dashboard/register.html" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/dashboard/templates/dashboard/bootstrap.html" />
         <option value="$PROJECT_DIR$/dashboard/templates/dashboard/login.html" />
+        <option value="$PROJECT_DIR$/static/css/login.css" />
         <option value="$PROJECT_DIR$/dashboard/urls.py" />
-        <option value="$PROJECT_DIR$/dashboard/views.py" />
+        <option value="$PROJECT_DIR$/cotk_dashboard/urls.py" />
+        <option value="$PROJECT_DIR$/dashboard/templates/registration/login.html" />
+        <option value="$PROJECT_DIR$/dashboard/templates/dashboard/base.html" />
+        <option value="$PROJECT_DIR$/cotk_dashboard/settings.py" />
         <option value="$PROJECT_DIR$/dashboard/templates/dashboard/index.html" />
+        <option value="$PROJECT_DIR$/dashboard/views.py" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-10" />
-    <option name="width" value="980" />
-    <option name="height" value="1030" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-7" />
+    <option name="width" value="1769" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -130,25 +424,22 @@
             <path>
               <item name="cotk_dashboard" type="b2602c69:ProjectViewProjectNode" />
               <item name="cotk_dashboard" type="462c0819:PsiDirectoryNode" />
-              <item name="cotk_dashboard" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cotk_dashboard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cotk_dashboard" type="462c0819:PsiDirectoryNode" />
               <item name="dashboard" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cotk_dashboard" type="b2602c69:ProjectViewProjectNode" />
               <item name="cotk_dashboard" type="462c0819:PsiDirectoryNode" />
-              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cotk_dashboard" type="b2602c69:ProjectViewProjectNode" />
               <item name="cotk_dashboard" type="462c0819:PsiDirectoryNode" />
-              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cotk_dashboard" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
@@ -157,12 +448,28 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/docker-compose.yml" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.HTML" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Will\PycharmProjects\cotk_dashboard\static\fontawesome\css" />
+      <recent name="C:\Users\Will\PycharmProjects\cotk_dashboard\static\fontawesome" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Will\PycharmProjects\cotk_dashboard\static" />
+      <recent name="C:\Users\Will\PycharmProjects\cotk_dashboard\static\fontawesome" />
+      <recent name="C:\Users\Will\PycharmProjects\cotk_dashboard\dashboard\templates\registration" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -176,8 +483,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Docker.docker-compose">
     <configuration name="cotk_dashboard" type="Python.DjangoServer" factoryName="Django server">
+      <module name="cotk_dashboard" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -189,7 +497,6 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="cotk_dashboard" />
       <option name="launchJavascriptDebuger" value="false" />
       <option name="port" value="8000" />
       <option name="host" value="" />
@@ -199,10 +506,47 @@
       <option name="runNoReload" value="false" />
       <option name="useCustomRunCommand" value="false" />
       <option name="customRunCommand" value="" />
+      <method v="2" />
     </configuration>
-  </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
+    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="buildCliOptions" value="" />
+          <option name="buildOnly" value="true" />
+          <option name="command" value="" />
+          <option name="containerName" value="" />
+          <option name="entrypoint" value="" />
+          <option name="imageTag" value="" />
+          <option name="commandLineOptions" value="" />
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Django server.cotk_dashboard" />
+      <item itemvalue="Docker.docker-compose" />
+      <item itemvalue="Docker.Dockerfile" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.Dockerfile" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -215,448 +559,297 @@
       <option name="presentableId" value="Default" />
       <updated>1553670716135</updated>
       <workItem from="1554288154230" duration="63000" />
+      <workItem from="1562081689874" duration="6984000" />
+      <workItem from="1562216156141" duration="3000" />
+      <workItem from="1562309254951" duration="607000" />
+      <workItem from="1562322127124" duration="1084000" />
+      <workItem from="1562415261592" duration="24818000" />
+      <workItem from="1562584181655" duration="54000" />
+      <workItem from="1562584272789" duration="125000" />
+      <workItem from="1562584588909" duration="456000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63000" />
+    <option name="totallyTimeSpent" value="34194000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
+    <frame x="-8" y="-8" width="2576" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30936074" sideWeight="0.50416666" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30936074" sideWeight="0.49583334" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14322917" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32990867" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39976135" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30936074" sideWeight="0.50416666" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30936074" sideWeight="0.49583334" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14322917" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32990867" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39976135" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.145469" />
+      <window_info id="Structure" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.50039744" side_tool="true" weight="0.32719395" />
+      <window_info anchor="bottom" id="Version Control" order="1" weight="0.32936078" />
+      <window_info anchor="bottom" id="Python Console" order="2" weight="0.32936078" />
+      <window_info anchor="bottom" x="1281" y="31" width="1278" height="1008" id="Terminal" order="3" sideWeight="0.49761525" type="WINDOWED" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" x="1" y="31" width="1278" height="1008" id="Docker" order="4" sideWeight="0.49960256" type="WINDOWED" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Message" order="5" />
+      <window_info anchor="bottom" id="Find" order="6" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="7" sideWeight="0.49583334" weight="0.30936074" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.39976135" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
+      <window_info anchor="bottom" id="Inspection Results" order="13" weight="0.32936078" />
+      <window_info anchor="right" id="SciView" order="0" />
+      <window_info anchor="right" id="Database" order="1" />
+      <window_info anchor="right" id="Commander" order="2" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager />
-    <watches-manager />
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dashboard/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/test.html" />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="180">
+            <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/index.html">
+    <entry file="file://$PROJECT_DIR$/dashboard/migrations/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="161" column="7" lean-forward="false" selection-start-line="161" selection-start-column="7" selection-end-line="161" selection-end-column="7" />
-          <folding />
+        <state>
+          <caret line="1" column="41" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/PULL_REQUEST_TEMPLATE.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/index.html">
+    <entry file="file://$PROJECT_DIR$/dashboard_mysql.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/migrations/0001_initial.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/remote_sources/112205665/1170049292/django/core/handlers/wsgi.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
-          <folding />
+        <state relative-caret-position="197">
+          <caret line="102" column="8" selection-start-line="102" selection-start-column="8" selection-end-line="102" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/urls.py">
+    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/112205665/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-181">
+          <caret line="896" column="6" selection-start-line="896" selection-start-column="6" selection-end-line="896" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/views.py">
+    <entry file="file://$PROJECT_DIR$/manage.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cotk_dashboard/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/forget.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="72">
+          <caret line="4" column="49" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/form.py">
+    <entry file="file://$PROJECT_DIR$/cotk_dashboard/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/apps.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state>
+          <caret column="33" lean-forward="true" selection-start-column="33" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/models.py">
+    <entry file="file://$PROJECT_DIR$/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="576">
+          <caret line="32" column="33" lean-forward="true" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/base.html">
+    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="972">
-          <caret line="36" column="41" lean-forward="false" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
+        <state relative-caret-position="504">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="35" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/static/bootstrap-table/bootstrap-table.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/static/bootstrap-table/bootstrap-table.css">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="19" column="26" lean-forward="false" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/static/bootstrap-table/bootstrap-table.min.css">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/urls.py">
+    <entry file="file://$PROJECT_DIR$/static/fontawesome/css/all.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="281">
+          <caret line="2917" column="8" selection-start-line="2917" selection-start-column="1" selection-end-line="2917" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="9" column="10" lean-forward="false" selection-start-line="9" selection-start-column="10" selection-end-line="21" selection-end-column="17" />
+        <state relative-caret-position="126">
+          <caret line="7" column="56" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/login.css">
+    <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/register.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="29" column="1" lean-forward="false" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+        <state relative-caret-position="72">
+          <caret line="4" column="62" selection-start-line="4" selection-start-column="62" selection-end-line="4" selection-end-column="62" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/admin.py">
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="1" column="41" lean-forward="false" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
+        <state relative-caret-position="18">
+          <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/static/bootstrap-4.3.1-dist/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="7900" column="1" selection-start-line="7900" selection-start-column="1" selection-end-line="7900" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="13" column="42" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/remote_sources/112205665/1170049292/django/contrib/auth/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-324">
+          <caret line="37" column="6" selection-start-line="37" selection-start-column="6" selection-end-line="37" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/remote_sources/112205665/1170049292/django/contrib/auth/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="31" lean-forward="true" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/views.py___jb_old___" />
     <entry file="file://$PROJECT_DIR$/dashboard/form.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="26" column="54" lean-forward="false" selection-start-line="26" selection-start-column="54" selection-end-line="26" selection-end-column="54" />
+        <state relative-caret-position="54">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/templates/registration/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="39" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cotk_dashboard/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="121" column="10" lean-forward="false" selection-start-line="121" selection-start-column="10" selection-end-line="121" selection-end-column="10" />
+        <state relative-caret-position="2610">
+          <caret line="145" column="2" selection-start-line="145" selection-start-column="2" selection-end-line="145" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="738">
+          <caret line="41" column="42" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cotk_dashboard/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="20" column="36" lean-forward="true" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+        <state relative-caret-position="342">
+          <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+          <folding>
+            <element signature="e#638#670#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/test.html" />
-    <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/register.html">
+    <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/bootstrap.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="26" column="20" lean-forward="false" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="36" column="18" lean-forward="false" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/forget.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="40" column="7" lean-forward="true" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
+        <state>
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="57" column="36" lean-forward="true" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3159">
-          <caret line="117" column="0" lean-forward="false" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/form.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="972">
-          <caret line="36" column="41" lean-forward="false" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="19" column="26" lean-forward="false" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="9" column="10" lean-forward="false" selection-start-line="9" selection-start-column="10" selection-end-line="21" selection-end-column="17" />
+        <state relative-caret-position="576">
+          <caret line="32" column="63" selection-start-line="32" selection-start-column="63" selection-end-line="32" selection-end-column="63" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/css/login.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="29" column="1" lean-forward="false" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+        <state relative-caret-position="180">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/admin.py">
+    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/remote_sources/112205665/1170049292/django/db/models/query.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="1" column="41" lean-forward="false" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/form.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="26" column="54" lean-forward="false" selection-start-line="26" selection-start-column="54" selection-end-line="26" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cotk_dashboard/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="121" column="10" lean-forward="false" selection-start-line="121" selection-start-column="10" selection-end-line="121" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cotk_dashboard/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="20" column="36" lean-forward="true" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/test.html" />
-    <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="26" column="20" lean-forward="false" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="36" column="18" lean-forward="false" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/forget.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="40" column="7" lean-forward="true" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="57" column="36" lean-forward="true" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="36" />
+        <state relative-caret-position="298">
+          <caret line="393" column="8" selection-start-line="393" selection-start-column="8" selection-end-line="393" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dashboard/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+        <state relative-caret-position="198">
+          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dashboard/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1561">
-          <caret line="166" column="40" lean-forward="true" selection-start-line="166" selection-start-column="40" selection-end-line="166" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="25" lean-forward="false" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="638">
+          <caret line="214" column="36" selection-start-line="214" selection-start-column="36" selection-end-line="214" selection-end-column="36" />
         </state>
       </provider>
     </entry>

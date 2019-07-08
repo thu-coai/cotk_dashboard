@@ -1,4 +1,5 @@
 Django
+django-bootstrap4
 mysqlclient
 django_mysql
 cryptography
