@@ -36,11 +36,11 @@
         </tr>
         </thead>
       </table>
-      <h5 class="my-3">我的token: <span class="text-monospace">{{ token }}</span></h5>
+      <h5 class="my-3">My token: <span class="text-monospace">{{ token }}</span></h5>
     </div>
   {% else %}
     <div class="container text-center py-5">
-      <h1>请先<a href="{% url 'login' %}">登录</a>后查看界面~</h1>
+      <h1>Please <a href="{% url 'login' %}">login</a> first~</h1>
     </div>
   {% endif %}
 {% endblock %}

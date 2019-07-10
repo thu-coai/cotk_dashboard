@@ -9,7 +9,7 @@
 
 {% block content %}
   {% if form.errors %}
-    <p>用户名或密码错误，请重试。</p>
+    <p>Wrong username or password. Please try again.</p>
   {% endif %}
 
   {% if next %}
@@ -27,7 +27,7 @@
           <div class="alert alert-warning">{{ message }}</div>
         {% endif %}
         {% csrf_token %}
-        <h2 class="text-center">欢迎登录</h2>
+        <h2 class="text-center">Welcome</h2>
         {#        <div class="form-group">#}
         {#          {{ form.username.label_tag }}#}
         {#          {{ form.username }}#}
@@ -38,8 +38,8 @@
         {#        </div>#}
         {% bootstrap_form form %}
         <div class="form-group d-flex">
-          <a class="btn btn-default mr-auto" href="{% url 'password_reset' %}">忘记密码</a>
-          <button type="submit" class="btn btn-primary pull-right">登录</button>
+          <a class="btn btn-default mr-auto" href="{% url 'password_reset' %}">Forgot password?</a>
+          <button type="submit" class="btn btn-primary pull-right">Log In</button>
         </div>
       </form>
     </div>

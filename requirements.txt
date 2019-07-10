@@ -1,4 +1,4 @@
-Django
+Django=2.3
 django-bootstrap4
 mysqlclient
 django_mysql

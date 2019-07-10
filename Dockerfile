@@ -1,9 +1,5 @@
-# My Site
-# Version: 1.0
-
-FROM python:3
-
-# Install Python and Package Libraries
+FROM python:3.7
+ENV PYTHONUNBUFFERED 1
 RUN apt-get update && apt-get upgrade -y && apt-get autoremove && apt-get autoclean
 RUN apt-get install -y \
     libffi-dev \
@@ -17,17 +13,15 @@ RUN apt-get install -y \
     net-tools \
     vim
 
-# Project Files and Settings
-ARG PROJECT=cotk_dashboard
-ARG PROJECT_DIR=/var/www/${PROJECT}
+ARG PROJECT_DIR=/cotk_dashboard
 
 RUN mkdir -p $PROJECT_DIR
 WORKDIR $PROJECT_DIR
 COPY requirements.txt .
-RUN pip install -r requirements.txt
+RUN pip install --upgrade pip && pip install -r requirements.txt
 
-# Server
-EXPOSE 8000
-STOPSIGNAL SIGINT
-ENTRYPOINT ["python", "manage.py"]
-CMD ["runserver", "0.0.0.0:8000"]
+## Server
+#EXPOSE 8000
+#STOPSIGNAL SIGINT
+#ENTRYPOINT ["python", "manage.py"]
+#CMD ["runserver", "0.0.0.0:8000"]

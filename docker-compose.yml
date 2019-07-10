@@ -1,28 +1,28 @@
-version: "2"
+version: "3"
 services:
   db:
     container_name: mysql
-    image: mysql/mysql-server
+    image: mysql:latest
     ports:
       - "3306:3306"
-    environment:
-      - MYSQL_ROOT_PASSWORD=itsasecret
+    env_file:
+      - .env
     volumes:
-      - ./dashboard_mysql.sql:/docker-entrypoint-initdb.d/dump.sql
+      - datavolume:/var/lib/mysql
 
   django:
     container_name: django
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: docker_tutorial_django
-    stdin_open: true
-    tty: true
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
     volumes:
-      - ./:/var/www/cotk_dashboard/
+      - ./:/cotk_dashboard/
     ports:
       - "8000:8000"
     links:
       - db
-    environment:
-      - DATABASE_URL=mysql://root:itsasecret@db:3306/docker_tutorial_django_db
+    env_file:
+      - .env
+
+volumes:
+  datavolume:
+

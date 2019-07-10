@@ -1,28 +1,15 @@
-from django.shortcuts import render, redirect
-from django.http import HttpResponse, HttpResponseNotFound, HttpResponseBadRequest
-from django.views.decorators.csrf import csrf_exempt
-from django.core.exceptions import ObjectDoesNotExist
-from django.contrib.auth.models import User
-from django.contrib.auth import authenticate
-from django.core.mail import send_mail, send_mass_mail, EmailMultiAlternatives
-
-import json
-from .models import Record, Check
-from .form import UploadForm, UserForm, RegisterForm, ForgetForm
 import random
 import string
 
+from django.contrib.auth import authenticate
+from django.contrib.auth.models import User
+from django.core.mail import send_mail
+from django.http import HttpResponse
+from django.shortcuts import redirect, render
+from django.views.decorators.csrf import csrf_exempt
 
-# Create your views here.
-
-def index(request):
-    user = request.user
-    token = ""
-    if user.is_authenticated:
-        token = user.first_name
-    print('user={}'.format(user))
-    print('token={}'.format(token))
-    return render(request, 'dashboard/index.html', locals())
+from dashboard.form import *
+from dashboard.models import *
 
 
 def login(request):
@@ -71,8 +58,17 @@ def register(request):
                 if same_email:
                     message = "邮箱已被注册!"
                     return render(request, 'dashboard/register.html', locals())
-                user = User.objects.create_user(username=username, email=email, password=password1,
-                                                first_name=generate_token())
+
+                user = User.objects.create_user(
+                    username=username,
+                    email=email,
+                    password=password1
+                )
+                profile = Profile(
+                    user=user,
+                    token=random_str(16)
+                )
+
                 return redirect('/login')
     register_form = RegisterForm()
     return render(request, 'dashboard/register.html', locals())
@@ -116,8 +112,8 @@ def send(request):
         same_email = Check.objects.get(email=request.GET['email'])
     except Check.DoesNotExist:
         same_email = None
-    check_num = generate_check()
-    if (same_email):
+    check_num = random_str(8)
+    if same_email:
         same_email.check = check_num
         same_email.save()
     else:
@@ -137,99 +133,14 @@ def logout(request):
     return redirect('/')
 
 
-@csrf_exempt
-def upload(request):
-    if request.method == "GET":
-        return HttpResponseNotFound()
+def random_str(n, chars=string.ascii_letters + string.digits):
+    return ''.join(random.choice(chars) for _ in range(n))
 
-    try:
-        print(request.POST)
-        token = request.POST['token']
-        form = request.POST['data']
-        form = json.loads(form)
-        form = UploadForm(form)
-    except Exception as e:
-        return HttpResponseBadRequest(json.dumps({"code": "wrong format", "err": str(e)}))
-
-    user = User.objects.get(first_name=token)
-
-    if not form.is_valid():
-        print(form.errors.as_json())
-        return HttpResponseBadRequest(json.dumps({"code": "bad", "err": form.errors.as_json()}))
-
-    r = Record()
-    r.git_user = form.cleaned_data['git_user']
-    r.git_repo = form.cleaned_data['git_repo']
-    r.git_commit = form.cleaned_data['git_commit']
-    r.result = form.cleaned_data['result']
-    r.other_config = {
-        "entry": form.cleaned_data['entry'],
-        "args": form.cleaned_data['args'],
-        "working_dir": form.cleaned_data['working_dir'],
-        "record_information": form.cleaned_data['record_information']
-    }
-    r.save()
-    return HttpResponse(json.dumps({"code": "ok", "id": user.id}))
-
-
-def get(request):
-    print(request.GET)
-    if "id" not in request.GET:
-        return HttpResponseBadRequest("ID not existed")
-    try:
-        r = Record.objects.get(id=request.GET["id"])
-    except ObjectDoesNotExist as err:
-        return HttpResponseBadRequest("ID not existed")
-
-    res = {
-        "git_user": r.git_user,
-        "git_repo": r.git_repo,
-        "git_commit": r.git_commit,
-        "result": r.result,
-        "other_config": r.other_config
-    }
-    return HttpResponse(json.dumps(res))
-
-
-def show(request):
-    if request.user.is_authenticated:
-        # return HttpResponse(json.dumps(
-        #     {"total": 2, "rows": [{"id": 1, "git_user": "qsz", "git_repo": "repo_0", "git_commit": "commit_0",
-        #                            "result": "result0", "other_config": {"key1": "item1", "key2": "item2"}},
-        #
-        #                           {"id": 2, "git_user": "wjq", "git_repo": "repo_2", "git_commit": "commit_2",
-        #                            "result": "result2", "other_config": {"key1": "item1", "key2": "item2"}}]}))
-        rows = []
-        for i in range(10):
-            try:
-                record = Record.objects.get(id=i)
-            except ObjectDoesNotExist:
-                pass
-            else:
-                rows.append({
-                    'id': i,
-                    'git_user': record.git_user,
-                    'git_repo': record.git_repo,
-                    'git_commit': record.git_commit,
-                    'result': record.result,
-                    'other_config': record.other_config
-                })
-
-        res = {
-            "total": len(rows),
-            "rows": rows
-        }
-        res = json.dumps(res)
-        return HttpResponse(res)
-    else:
-        return redirect('/login')
-
-
-def generate_token():
-    ran_str = ''.join(random.sample(string.ascii_letters + string.digits, 8))
-    return ran_str
-
-
-def generate_check():
-    ran_str = ''.join(random.sample(string.ascii_letters + string.digits, 16))
-    return ran_str
+# def generate_token():
+#     ran_str = ''.join(random.sample(string.ascii_letters + string.digits, 16))
+#     return ran_str
+#
+#
+# def generate_check():
+#     ran_str = ''.join(random.sample(string.ascii_letters + string.digits, 8))
+#     return ran_str
