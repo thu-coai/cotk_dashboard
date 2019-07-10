@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .user_views import login, register, forget, send, logout
+from .user_views import login, register
 from .record_views import upload, get, show
 
 

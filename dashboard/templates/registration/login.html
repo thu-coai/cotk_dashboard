@@ -4,13 +4,13 @@
 {% load static %}
 
 {% block css %}
-  <link rel="stylesheet" href="{% static 'css/login.css' %}">
+{#  <link rel="stylesheet" href="{% static 'css/login.css' %}">#}
 {% endblock %}
 
 {% block content %}
-  {% if form.errors %}
-    <p>Wrong username or password. Please try again.</p>
-  {% endif %}
+{#  {% if form.errors %}#}
+{#    <p>Wrong username or password. Please try again.</p>#}
+{#  {% endif %}#}
 
   {% if next %}
     {% if request.user.is_authenticated %}
@@ -20,36 +20,32 @@
       <p>Please login to see this page.</p>
     {% endif %}
   {% endif %}
-  <div class="h-100 d-flex align-items-center justify-content-center">
-    <div class="form-login">
-      <form class="text-left" action="{% url 'login' %}" method="post">
-        {% if message %}
-          <div class="alert alert-warning">{{ message }}</div>
-        {% endif %}
-        {% csrf_token %}
-        <h2 class="text-center">Welcome</h2>
-        {#        <div class="form-group">#}
-        {#          {{ form.username.label_tag }}#}
-        {#          {{ form.username }}#}
-        {#        </div>#}
-        {#        <div class="form-group">#}
-        {#          {{ form.password.label_tag }}#}
-        {#          {{ form.password }}#}
-        {#        </div>#}
-        {% bootstrap_form form %}
-        <div class="form-group d-flex">
-          <a class="btn btn-default mr-auto" href="{% url 'password_reset' %}">Forgot password?</a>
-          <button type="submit" class="btn btn-primary pull-right">Log In</button>
-        </div>
-      </form>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-4 align-self-center offset-4">
+
+        <form class="text-left form-login" action="{% url 'login' %}" method="post">
+          {% if message %}
+            <div class="alert alert-warning">{{ message }}</div>
+          {% endif %}
+          {% csrf_token %}
+          <h2 class="text-center">Welcome</h2>
+
+          {% bootstrap_form form %}
+          <div class="form-group d-flex">
+            <a class="mr-auto" href="{% url 'password_reset' %}">Forgot password?</a>
+            <button type="submit" class="btn btn-primary pull-right">Log In</button>
+          </div>
+        </form>
+      </div>
     </div>
   </div> <!-- /container -->
 
 {% endblock %}
 {% block script %}
-  <script>
-      function forget() {
-          window.location.href = "{% url 'password_reset' %}"
-      }
-  </script>
+{#  <script>#}
+{#      function forget() {#}
+{#          window.location.href = "{% url 'password_reset' %}"#}
+{#      }#}
+{#  </script>#}
 {% endblock %}

@@ -18,6 +18,9 @@ ARG PROJECT_DIR=/cotk_dashboard
 RUN mkdir -p $PROJECT_DIR
 WORKDIR $PROJECT_DIR
 COPY requirements.txt .
+##########
+RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+##########
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
 ## Server

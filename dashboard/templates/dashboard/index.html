@@ -5,7 +5,7 @@
 {% block content %}
   {% if user.is_authenticated %}
     <div class="container">
-      <strong>训练记录</strong>
+      <strong>Model Records</strong>
       <table
         id="table"
         data-toggle="table"
@@ -36,7 +36,7 @@
         </tr>
         </thead>
       </table>
-      <h5 class="my-3">My token: <span class="text-monospace">{{ token }}</span></h5>
+      <h5 class="my-3">My token: <span class="text-monospace">{{ request.user.profile.token }}</span></h5>
     </div>
   {% else %}
     <div class="container text-center py-5">

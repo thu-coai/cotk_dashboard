@@ -2,7 +2,7 @@ version: "3"
 services:
   db:
     container_name: mysql
-    image: mysql:latest
+    image: mysql:5.7
     ports:
       - "3306:3306"
     env_file:
@@ -18,11 +18,10 @@ services:
       - ./:/cotk_dashboard/
     ports:
       - "8000:8000"
-    links:
+    depends_on:
       - db
     env_file:
       - .env
-
 volumes:
   datavolume:
 
