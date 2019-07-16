@@ -1,7 +1,8 @@
 from django.shortcuts import render
 
-from .user_views import login, register
-from .record_views import upload, get, show
+from .users import register, profile
+from .records import upload, get, show
+from .table import records
 
 
 def index(request):

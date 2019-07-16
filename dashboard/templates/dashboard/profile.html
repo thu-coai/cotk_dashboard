@@ -1,0 +1,65 @@
+{% extends 'dashboard/base.html' %}
+{% load bootstrap4 %}
+{% block title %}
+  {{ request.user.username }} - Profile
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-3">
+        <img src="https://via.placeholder.com/250?text=avatar" alt="avatar">
+      </div>
+      <div class="col-9">
+        <label for="token">Token</label>
+        <div class="input-group">
+          <input type="password" class="form-control" id="token" value="{{ request.user.profile.token }}" readonly>
+          <div class="input-group-append">
+            <button class="btn btn-outline-primary" type="button" id="toggle-token" data-toggle="tooltip"
+                    title="Show/hide"><i class="fa fa-eye"></i></button>
+            <button class="btn btn-outline-primary" type="button" id="copy-token" data-toggle="tooltip"
+                    title="Copy to clipboard"><i class="fa fa-copy"></i></button>
+          </div>
+        </div>
+        <small class="form-text text-muted">
+          Your token for authentication.
+        </small>
+{#        <div class="alert alert-success my-3" id="alert-copied">#}
+{#          The token has been successfully copied to your clipboard.#}
+{#          <button class="close">#}
+{#            &times;#}
+{#          </button>#}
+{#        </div>#}
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block script %}
+  <script>
+    $(document).ready(function () {
+      $('[data-toggle="tooltip"]').tooltip();
+
+      $('.close').click(function () {
+        $(this).closest('.alert').hide();
+      });
+
+      let $token = $('#token');
+
+      $('#toggle-token').click(function () {
+        $token.prop(
+          'type',
+          $token.prop('type') === 'text' ? 'password' : 'text'
+        );
+      });
+
+      $('#copy-token').click(function () {
+        let $t = $('<input>');
+        $t.val($token.val()).select().appendTo($('body'));
+        $t.select();
+        document.execCommand('copy');
+        $t.remove();
+      })
+    })
+  </script>
+{% endblock %}

@@ -4,25 +4,27 @@
 {% load static %}
 
 {% block css %}
-{#  <link rel="stylesheet" href="{% static 'css/login.css' %}">#}
+  {#  <link rel="stylesheet" href="{% static 'css/login.css' %}">#}
 {% endblock %}
 
 {% block content %}
-{#  {% if form.errors %}#}
-{#    <p>Wrong username or password. Please try again.</p>#}
-{#  {% endif %}#}
+  {#  {% if form.errors %}#}
+  {#    <p>Wrong username or password. Please try again.</p>#}
+  {#  {% endif %}#}
 
-  {% if next %}
-    {% if request.user.is_authenticated %}
-      <p>Your account doesn't have access to this page. To proceed,
-        please login with an account that has access.</p>
-    {% else %}
-      <p>Please login to see this page.</p>
-    {% endif %}
-  {% endif %}
   <div class="container">
     <div class="row align-items-center">
       <div class="col-4 align-self-center offset-4">
+        {% if next %}
+          <div class="alert alert-warning">
+            {% if request.user.is_authenticated %}
+              Your account doesn't have access to this page. To proceed,
+              please login with an account that has access.
+            {% else %}
+              Please login to see this page.
+            {% endif %}
+          </div>
+        {% endif %}
 
         <form class="text-left form-login" action="{% url 'login' %}" method="post">
           {% if message %}
@@ -41,11 +43,4 @@
     </div>
   </div> <!-- /container -->
 
-{% endblock %}
-{% block script %}
-{#  <script>#}
-{#      function forget() {#}
-{#          window.location.href = "{% url 'password_reset' %}"#}
-{#      }#}
-{#  </script>#}
 {% endblock %}

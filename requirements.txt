@@ -3,3 +3,4 @@ django-bootstrap4
 mysqlclient
 django_mysql
 cryptography
+django-datatables-view

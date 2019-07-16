@@ -9,13 +9,16 @@
   {% load static %}
   {% load bootstrap4 %}
 
-  <link rel="stylesheet" href="{% static 'bootstrap-4.3.1-dist/css/bootstrap.min.css' %}">
-  <link rel="stylesheet" href="{% static 'fontawesome/css/all.min.css' %}">
-  <link rel="stylesheet" href="{% static 'bootstrap-table/bootstrap-table.min.css' %}">
+  <link rel="stylesheet" href="{% static 'lib/bootstrap-4.3.1-dist/css/bootstrap.css' %}">
+  <link rel="stylesheet" href="{% static 'lib/fontawesome/css/all.css' %}">
+{#  <link rel="stylesheet" href="{% static 'lib/bootstrap-table/bootstrap-table.min.css' %}">#}
+  <link rel="stylesheet" href="{% static 'lib/DataTables/datatables.css' %}">
 
-  <script src="{% static 'jquery-3.2.1/jquery-3.2.1.js' %}"></script>
-  <script src="{% static 'bootstrap-4.3.1-dist/js/bootstrap.bundle.js' %}"></script>
-  <script src="{% static 'bootstrap-table/bootstrap-table.js' %}"></script>
+  <script src="{% static 'lib/jquery-3.2.1/jquery-3.2.1.js' %}"></script>
+  <script src="{% static 'lib/bootstrap-4.3.1-dist/js/bootstrap.bundle.js' %}"></script>
+{#  <script src="{% static 'lib/bootstrap-table/bootstrap-table.js' %}"></script>#}
+  <script src="{% static 'lib/DataTables/datatables.js'%}"></script>
+
 
   {% bootstrap_messages %}
 
@@ -46,11 +49,14 @@
         <li class="nav-item active">
           <a class="nav-link" href="{% url 'index' %}">Home</a>
         </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'show' %}">Records</a>
+        </li>
       </ul>
       <ul class="navbar-nav">
         {% if request.user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link" href="#">{{ request.user.username }}</a>
+            <a class="nav-link" href="{% url 'profile' %}">{{ request.user.username }}</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'logout' %}">Log out</a>

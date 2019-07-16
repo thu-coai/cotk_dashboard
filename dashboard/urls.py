@@ -1,4 +1,4 @@
-from django.urls import path, include
+from django.urls import path
 
 from . import views
 
@@ -7,9 +7,6 @@ urlpatterns = [
     path('upload', views.upload, name='upload'),
     path('get', views.get, name='get'),
     path('show', views.show, name='show'),
-    # path('login',views.login,name='login'),
-    path('accounts/register', views.register, name='register'),
-    # path('logout',views.logout,name='logout'),
-    # path('forget',views.forget,name='forget'),
-    # path('send',views.send,name='send'),
+    path('profile', views.profile, name='profile'),
+    path('register', views.register, name='register'),
 ]

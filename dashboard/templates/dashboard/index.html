@@ -2,56 +2,9 @@
 {% block title %}
   Thu-cotk_dashboard
 {% endblock %}
+
 {% block content %}
-  {% if user.is_authenticated %}
-    <div class="container">
-      <strong>Model Records</strong>
-      <table
-        id="table"
-        data-toggle="table"
-        data-url="{% url 'show' %}"
-        data-height="560"
-        data-search="true"
-        data-show-refresh="true"
-        data-show-toggle="true"
-        data-show-fullscreen="true"
-        data-show-columns="true"
-        data-detail-view="true"
-        data-detail-formatter="detailFormatter"
-        data-minimum-count-columns="2"
-        data-show-pagination-switch="true"
-        data-pagination="true"
-        data-page-list="[10, 25, 50, 100, ALL]"
-        data-side-pagination="client"
-        data-buttons-align="left"
-        data-search-align="left"
-      >
-        <thead>
-        <tr>
-          <th data-field="id">ID</th>
-          <th data-field="git_user">Git_User</th>
-          <th data-field="git_repo">Git_Repository</th>
-          <th data-field="git_commit">Git_commit</th>
-          <th data-field="result">Git_result</th>
-        </tr>
-        </thead>
-      </table>
-      <h5 class="my-3">My token: <span class="text-monospace">{{ request.user.profile.token }}</span></h5>
-    </div>
-  {% else %}
-    <div class="container text-center py-5">
-      <h1>Please <a href="{% url 'login' %}">login</a> first~</h1>
-    </div>
-  {% endif %}
-{% endblock %}
-{% block script %}
-  <script>
-      function detailFormatter(index, row) {
-          var html = [];
-          $.each(row['other_config'], function (key, value) {
-              html.push('<p><b>' + key + ':</b> ' + value + '</p>')
-          });
-          return html.join('')
-      }
-  </script>
+  <div class="text-center">
+    <h1>COTK Dashboard</h1>
+  </div>
 {% endblock %}
