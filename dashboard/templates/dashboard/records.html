@@ -33,7 +33,14 @@
         bSort: false,
         processing: true,
         serverSide: true,
-        ajax: "{% url 'records_json' %}",
+        ajax: {
+          url: "{% url 'records_json' %}",
+          data: {
+            {% if uid %}
+              uid: {{ uid }}
+            {% endif %}
+          }
+        },
         columnDefs: [
           {
             name: 'id',

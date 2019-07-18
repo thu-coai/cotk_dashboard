@@ -4,6 +4,8 @@ import string
 from django.contrib.auth import authenticate
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render, reverse
+from django.views.decorators.http import require_POST
+from django.http import HttpResponse, HttpResponseBadRequest
 
 from dashboard.form import *
 from dashboard.models import *
@@ -48,8 +50,21 @@ def register(request):
 
 
 @login_required
-def profile(request):
-    print(request.user.profile.token)
+@require_POST
+def regenerate_token(request):
+    profile = request.user.profile
+
+    new_token = random_str(16)
+    while Profile.objects.filter(token=new_token).exists():
+        new_token = random_str(16)
+    profile.token = new_token
+    profile.save()
+
+    return redirect(profile_view)
+
+
+@login_required
+def profile_view(request):
     return render(request, 'dashboard/profile.html', locals())
 
 

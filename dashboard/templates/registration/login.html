@@ -38,6 +38,7 @@
             <a class="mr-auto" href="{% url 'password_reset' %}">Forgot password?</a>
             <button type="submit" class="btn btn-primary pull-right">Log In</button>
           </div>
+          <input type="hidden" name="next" value="{{ next }}">
         </form>
       </div>
     </div>

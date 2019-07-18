@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
-from .users import register, profile
-from .records import upload, get, show
+from .users import register, profile_view, regenerate_token
+from .records import upload, get, show, update
 from .table import RecordsJson, records
 
 

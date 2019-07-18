@@ -21,7 +21,7 @@ class RecordsJson(BaseDatatableView):
         if column == 'id':
             return '<a href="{0}?id={1}">#{1}</a>'.format(reverse(views.show), row.id)
         elif column == 'user':
-            return escape('{}'.format(row.user.username))
+            return '<a href="{0}?uid={1}">{2}</a>'.format(reverse(views.records), row.user.id, row.user.username)
         elif column == 'github':
             return '<a href="{}">{}</a>'.format(row.github_url, row.github_str)
         elif column == 'dataset':
@@ -41,17 +41,25 @@ class RecordsJson(BaseDatatableView):
 
     def filter_queryset(self, qs: QuerySet):
         request = self.request
+
+        uid = request.GET.get('uid', '')
+        if uid.isdigit():
+            uid = int(uid)
+            qs = qs.filter(user__id__iexact=uid)
+
         search = request.GET.get('search[value]', None)
         if search:
             qs = qs.filter(
                 Q(record_information__dataloader__has_key=search) |
                 Q(user__username__iexact=search) |
                 Q(git_user__iexact=search) |
-                Q(git_repo__iexact=search)
+                Q(git_repo__iexact=search) |
+                Q(git_commit__startswith=search)
             )
 
         return qs
 
 
 def records(request):
+    uid = request.GET.get('uid', None)
     return render(request, 'dashboard/records.html', locals())
