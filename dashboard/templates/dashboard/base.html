@@ -11,13 +11,18 @@
 
   <link rel="stylesheet" href="{% static 'lib/bootstrap-4.3.1-dist/css/bootstrap.css' %}">
   <link rel="stylesheet" href="{% static 'lib/fontawesome/css/all.css' %}">
-{#  <link rel="stylesheet" href="{% static 'lib/bootstrap-table/bootstrap-table.min.css' %}">#}
-  <link rel="stylesheet" href="{% static 'lib/DataTables/datatables.css' %}">
+  {#  <link rel="stylesheet" href="{% static 'lib/bootstrap-table/bootstrap-table.min.css' %}">#}
+  {#    <link rel="stylesheet" href="{% static 'lib/DataTables/datatables.css' %}">#}
+  <link rel="stylesheet" href="{% static 'lib/jquery-3.2.1/jquery.json-viewer.css' %}">
 
   <script src="{% static 'lib/jquery-3.2.1/jquery-3.2.1.js' %}"></script>
   <script src="{% static 'lib/bootstrap-4.3.1-dist/js/bootstrap.bundle.js' %}"></script>
-{#  <script src="{% static 'lib/bootstrap-table/bootstrap-table.js' %}"></script>#}
-  <script src="{% static 'lib/DataTables/datatables.js'%}"></script>
+  {#  <script src="{% static 'lib/bootstrap-table/bootstrap-table.js' %}"></script>#}
+  {#    <script src="{% static 'lib/DataTables/datatables.js'%}"></script>#}
+  <script src="{% static 'lib/jquery-3.2.1/jquery.json-viewer.js' %}"></script>
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.css"/>
+  <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.js"></script>
 
 
   {% bootstrap_messages %}
@@ -50,7 +55,7 @@
           <a class="nav-link" href="{% url 'index' %}">Home</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="{% url 'show' %}">Records</a>
+          <a class="nav-link" href="{% url 'records' %}">Records</a>
         </li>
       </ul>
       <ul class="navbar-nav">

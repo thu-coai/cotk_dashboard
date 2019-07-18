@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 from .users import register, profile
 from .records import upload, get, show
-from .table import records
+from .table import RecordsJson, records
 
 
 def index(request):

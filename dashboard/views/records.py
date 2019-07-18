@@ -1,7 +1,7 @@
 import json
 
 from django.contrib.auth.models import User
-from django.http import HttpResponseNotFound, HttpResponseBadRequest, HttpResponse
+from django.http import HttpResponseNotFound, HttpResponseBadRequest, HttpResponse, Http404
 from django.shortcuts import redirect, render
 from django.views.decorators.csrf import csrf_exempt
 
@@ -21,19 +21,28 @@ def upload(request):
         form = json.loads(form)
         form = UploadForm(form)
     except Exception as e:
-        return HttpResponseBadRequest(json.dumps({"code": "wrong format", "err": str(e)}))
+        return HttpResponseBadRequest(json.dumps({
+            "code": "wrong format",
+            "err": str(e)
+        }))
 
     try:
         token = request.POST['token']
         user = User.objects.get(profile__token=token)
     except User.DoesNotExist as e:
-        return HttpResponseBadRequest(json.dumps({"code": "bad token", "err": "token does not exist"}))
+        return HttpResponseBadRequest(json.dumps({
+            "code": "bad token",
+            "err": "token does not exist",
+        }))
 
     if not form.is_valid():
         print(form.errors.as_json())
-        return HttpResponseBadRequest(json.dumps({"code": "invalid form", "err": form.errors.as_json()}))
+        return HttpResponseBadRequest(json.dumps({
+            "code": "invalid form",
+            "err": form.errors.as_json(),
+        }))
 
-    r = Record(
+    record = Record(
         user=user,
 
         entry=form.cleaned_data['entry'],
@@ -48,67 +57,44 @@ def upload(request):
         result=form.cleaned_data['result'],
     )
 
-    r.save()
+    record.save()
 
-    return HttpResponse(json.dumps({"code": "ok", "id": user.id}))
+    return HttpResponse(json.dumps({
+        "code": "ok",
+        "id": record.id,
+    }))
 
 
 def get(request):
     print(request.GET)
-    if "id" not in request.GET:
-        return HttpResponseBadRequest("ID not existed")
+    if 'id' not in request.GET:
+        return HttpResponseBadRequest('ID not exists')
     try:
         r = Record.objects.get(id=request.GET["id"])
     except Record.DoesNotExist as e:
-        return HttpResponseBadRequest("ID not existed")
+        return HttpResponseBadRequest('ID not exists')
 
     res = {
         'git': r.git_str(),
-        'config': {
-          'entry': r.entry,
-          'args': r.args,
-          'working_dir': r.working_dir
-        },
+
+        'entry': r.entry,
+        'args': r.args,
+        'working_dir': r.working_dir,
+
         'record_information': r.record_information,
         'result': r.result,
     }
     return HttpResponse(json.dumps(res))
 
 
-# def show(request):
-#     if request.user.is_authenticated:
-#         # return HttpResponse(json.dumps(
-#         #     {"total": 2, "rows": [{"id": 1, "git_user": "qsz", "git_repo": "repo_0", "git_commit": "commit_0",
-#         #                            "result": "result0", "other_config": {"key1": "item1", "key2": "item2"}},
-#         #
-#         #                           {"id": 2, "git_user": "wjq", "git_repo": "repo_2", "git_commit": "commit_2",
-#         #                            "result": "result2", "other_config": {"key1": "item1", "key2": "item2"}}]}))
-#         rows = []
-#         for i in range(10):
-#             try:
-#                 record = Record.objects.get(id=i)
-#             except Record.DoesNotExist:
-#                 pass
-#             else:
-#                 rows.append({
-#                     'id': i,
-#                     'git_user': record.git_user,
-#                     'git_repo': record.git_repo,
-#                     'git_commit': record.git_commit,
-#                     'result': record.result,
-#                     'other_config': record.other_config
-#                 })
-#
-#         res = {
-#             "total": len(rows),
-#             "rows": rows
-#         }
-#         res = json.dumps(res)
-#         return HttpResponse(res)
-#     else:
-#         return redirect('/login')
-
-RECORDS_PER_PAGE = 20
 def show(request):
-    return render(request, 'dashboard/show.html', locals())
+    if 'id' not in request.GET:
+        raise Http404('Wrong format')
+    rid = request.GET['id']
 
+    try:
+        record = Record.objects.get(id=rid)
+    except Record.DoesNotExist as e:
+        raise Http404('ID not exists')
+
+    return render(request, 'dashboard/show.html', locals())
