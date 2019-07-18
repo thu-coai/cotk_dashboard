@@ -1,4 +1,4 @@
-from django.db.models import QuerySet
+from django.db.models import QuerySet, Q
 from django.http import HttpRequest
 from django.shortcuts import render, reverse
 from django_datatables_view.base_datatable_view import BaseDatatableView
@@ -26,7 +26,12 @@ class RecordsJson(BaseDatatableView):
             return '<a href="{}">{}</a>'.format(row.github_url, row.github_str)
         elif column == 'dataset':
             try:
-                return escape(next(iter(row.record_information['dataloader'])))
+                dataloader = dict(row.record_information['dataloader'])
+                name = next(iter(dataloader))
+                res = '{0} ({1})'.format(name, dataloader[name]['file_id'])
+                if len(dataloader) > 1:
+                    res += '...'
+                return escape(res)
             except:
                 return 'unknown'
         elif column == 'uploaded_at':
@@ -36,6 +41,15 @@ class RecordsJson(BaseDatatableView):
 
     def filter_queryset(self, qs: QuerySet):
         request = self.request
+        search = request.GET.get('search[value]', None)
+        if search:
+            qs = qs.filter(
+                Q(record_information__dataloader__has_key=search) |
+                Q(user__username__iexact=search) |
+                Q(git_user__iexact=search) |
+                Q(git_repo__iexact=search)
+            )
+
         return qs
 
 

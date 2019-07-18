@@ -6,35 +6,31 @@
 
 {% block content %}
   <div class="container">
-      <h1 class="mr-auto mb-1">Record #{{ rid }}</h1>
-      <div class="mb-3">
-        Uploaded by
-        <a href="#">{{ record.user }}</a>
-      </div>
+    <h1 class="mr-auto mb-1">Record #{{ rid }}</h1>
+    <div class="mb-3">
+      Uploaded by
+      <a href="#">{{ record.user }}</a>
+    </div>
     <div class="list-group">
       <div class="list-group-item">
         <h5 class="mb-2">Github commit</h5>
         <a href="{{ record.github_url }}">{{ record.github_str }}</a>
       </div>
       <div class="list-group-item">
-        <h5 class="mb-2">Entry</h5>
-        <pre>{{ record.entry }}</pre>
+        <h5 class="mb-2">Result</h5>
+        <pre id="result"></pre>
       </div>
       <div class="list-group-item">
-        <h5 class="mb-2">Arguments</h5>
-        <pre id="args">{{ record.args }}</pre>
-      </div>
-      <div class="list-group-item">
-        <h5 class="mb-2">Working directory</h5>
-        {{ record.working_dir }}
+        <h5 class="mb-2">Description</h5>
+        <p>{{ record.description }}</p>
       </div>
       <div class="list-group-item">
         <h5 class="mb-2">Record information</h5>
-        <pre id="info">{{ record.result }}</pre>
+        <pre id="info"></pre>
       </div>
       <div class="list-group-item">
-        <h5 class="mb-2">Result</h5>
-        <pre id="result">{{ record.result }}</pre>
+        <h5 class="mb-2">Config</h5>
+        <pre id="config"></pre>
       </div>
     </div>
   </div>
@@ -43,7 +39,7 @@
 {% block script %}
   {{ record.result|json_script:"result-json" }}
   {{ record.record_information|json_script:"info-json" }}
-  {{ record.args|json_script:"args-json" }}
+  {{ config|json_script:"config-json" }}
   <script>
     $(document).ready(function () {
       $('#result').jsonViewer(JSON.parse($('#result-json').text()), {
@@ -56,7 +52,7 @@
         withLinks: false
       });
 
-      $('#args').jsonViewer(JSON.parse($('#args-json').text()), {
+      $('#config').jsonViewer(JSON.parse($('#config-json').text()), {
         withQuotes: true,
         withLinks: false
       });

@@ -68,21 +68,26 @@ def upload(request):
 def get(request):
     print(request.GET)
     if 'id' not in request.GET:
-        return HttpResponseBadRequest('ID not exists')
+        return HttpResponseBadRequest('ID does not exist')
     try:
-        r = Record.objects.get(id=request.GET["id"])
+        record = Record.objects.get(id=request.GET["id"])
     except Record.DoesNotExist as e:
-        return HttpResponseBadRequest('ID not exists')
+        return HttpResponseBadRequest('ID does not exist')
 
     res = {
-        'git': r.git_str(),
+        'id': record.id,
+        'user': record.user.username,
 
-        'entry': r.entry,
-        'args': r.args,
-        'working_dir': r.working_dir,
+        'entry': record.entry,
+        'args': record.args,
+        'working_dir': record.working_dir,
 
-        'record_information': r.record_information,
-        'result': r.result,
+        'git_user': record.git_user,
+        'git_repo': record.git_repo,
+        'git_commit': record.git_commit,
+
+        'record_information': record.record_information,
+        'result': record.result,
     }
     return HttpResponse(json.dumps(res))
 
@@ -97,4 +102,9 @@ def show(request):
     except Record.DoesNotExist as e:
         raise Http404('ID not exists')
 
+    config = {
+        'entry': record.entry,
+        'args': record.args,
+        'working_dir': record.working_dir,
+    }
     return render(request, 'dashboard/show.html', locals())
