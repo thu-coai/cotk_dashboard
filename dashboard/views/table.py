@@ -1,3 +1,5 @@
+import json
+
 from django.db.models import QuerySet, Q
 from django.http import HttpRequest
 from django.shortcuts import render, reverse
@@ -11,9 +13,9 @@ from ..models import Record
 class RecordsJson(BaseDatatableView):
     model = Record
 
-    columns = ['id', 'user', 'github', 'dataset', 'uploaded_at']
+    # columns = ['id', 'user', 'github', 'dataset', 'uploaded_at']
 
-    order_columns = ['id', '', '', '', 'uploaded_at']
+    # order_columns = ['id', '', '', '', 'uploaded_at']
 
     max_display_length = 50
 
@@ -36,6 +38,9 @@ class RecordsJson(BaseDatatableView):
                 return 'unknown'
         elif column == 'uploaded_at':
             return row.uploaded_at.strftime('%Y-%m-%d %H:%M:%S')
+        elif column in row.record_information:
+            data = row.record_information[column]
+            return escape(json.dumps(data))
         else:
             return super(RecordsJson, self).render_column(row, column)
 
@@ -62,4 +67,9 @@ class RecordsJson(BaseDatatableView):
 
 def records(request):
     uid = request.GET.get('uid', None)
+    extra_columns = request.GET.get('extra_columns', None)
+    if extra_columns:
+        extra_columns = extra_columns.split(',')
+    else:
+        extra_columns = []
     return render(request, 'dashboard/records.html', locals())

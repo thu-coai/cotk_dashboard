@@ -17,9 +17,24 @@
             <th>Github commit</th>
             <th>Dataset</th>
             <th>Uploaded at</th>
+            {% for col in extra_columns %}
+              <th>{{ col }}</th>
+            {% endfor %}
           </tr>
           </thead>
         </table>
+      </div>
+    </div>
+    <hr class="my-4">
+    <div class="row">
+      <div class="col-12">
+        <form method="get">
+          <div class="form-group">
+            <label for="extra_columns">Extra columns (Corresponding to keys in 'record_information', separated by commas):</label>
+            <textarea name="extra_columns" id="extra_columns" class="form-control" rows="3"></textarea>
+          </div>
+          <button class="btn btn-outline-primary">Submit</button>
+        </form>
       </div>
     </div>
   </div>
@@ -41,10 +56,28 @@
             {% endif %}
           }
         },
-        columnDefs: [
+        columns: [
           {
             name: 'id',
-          }
+          },
+          {
+            name: 'user',
+          },
+          {
+            name: 'github',
+          },
+          {
+            name: 'dataset',
+          },
+          {
+            name: 'uploaded_at',
+          },
+          {% for col in extra_columns %}
+            {
+              name: '{{ col|escapejs }}',
+            },
+          {% endfor %}
+
         ],
       });
     })
