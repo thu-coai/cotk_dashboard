@@ -3,15 +3,7 @@
 {% load bootstrap4 %}
 {% load static %}
 
-{% block css %}
-  {#  <link rel="stylesheet" href="{% static 'css/login.css' %}">#}
-{% endblock %}
-
 {% block content %}
-  {#  {% if form.errors %}#}
-  {#    <p>Wrong username or password. Please try again.</p>#}
-  {#  {% endif %}#}
-
   <div class="container">
     <div class="row align-items-center">
       <div class="col-4 align-self-center offset-4">
@@ -42,6 +34,5 @@
         </form>
       </div>
     </div>
-  </div> <!-- /container -->
-
+  </div>
 {% endblock %}
