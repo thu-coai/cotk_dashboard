@@ -1,4 +1,6 @@
-from django.db.models import QuerySet
+import json
+
+from django.db.models import QuerySet, Q
 from django.http import HttpRequest
 from django.shortcuts import render, reverse
 from django_datatables_view.base_datatable_view import BaseDatatableView
@@ -11,9 +13,9 @@ from ..models import Record
 class RecordsJson(BaseDatatableView):
     model = Record
 
-    columns = ['id', 'user', 'github', 'dataset', 'uploaded_at']
+    # columns = ['id', 'user', 'github', 'dataset', 'uploaded_at']
 
-    order_columns = ['id', '', '', '', 'uploaded_at']
+    # order_columns = ['id', '', '', '', 'uploaded_at']
 
     max_display_length = 50
 
@@ -21,23 +23,53 @@ class RecordsJson(BaseDatatableView):
         if column == 'id':
             return '<a href="{0}?id={1}">#{1}</a>'.format(reverse(views.show), row.id)
         elif column == 'user':
-            return escape('{}'.format(row.user.username))
+            return '<a href="{0}?uid={1}">{2}</a>'.format(reverse(views.records), row.user.id, row.user.username)
         elif column == 'github':
             return '<a href="{}">{}</a>'.format(row.github_url, row.github_str)
         elif column == 'dataset':
             try:
-                return escape(next(iter(row.record_information['dataloader'])))
+                dataloader = dict(row.record_information['dataloader'])
+                name = next(iter(dataloader))
+                res = '{0} ({1})'.format(name, dataloader[name]['file_id'])
+                if len(dataloader) > 1:
+                    res += '...'
+                return escape(res)
             except:
                 return 'unknown'
         elif column == 'uploaded_at':
             return row.uploaded_at.strftime('%Y-%m-%d %H:%M:%S')
+        elif column in row.record_information:
+            data = row.record_information[column]
+            return escape(json.dumps(data))
         else:
             return super(RecordsJson, self).render_column(row, column)
 
     def filter_queryset(self, qs: QuerySet):
         request = self.request
+
+        uid = request.GET.get('uid', '')
+        if uid.isdigit():
+            uid = int(uid)
+            qs = qs.filter(user__id__iexact=uid)
+
+        search = request.GET.get('search[value]', None)
+        if search:
+            qs = qs.filter(
+                Q(record_information__dataloader__has_key=search) |
+                Q(user__username__iexact=search) |
+                Q(git_user__iexact=search) |
+                Q(git_repo__iexact=search) |
+                Q(git_commit__startswith=search)
+            )
+
         return qs
 
 
 def records(request):
+    uid = request.GET.get('uid', None)
+    extra_columns = request.GET.get('extra_columns', None)
+    if extra_columns:
+        extra_columns = extra_columns.split(',')
+    else:
+        extra_columns = []
     return render(request, 'dashboard/records.html', locals())

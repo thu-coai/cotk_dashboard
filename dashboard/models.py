@@ -25,19 +25,18 @@ class Record(models.Model):
     record_information = mysql_models.JSONField(null=True)
     result = mysql_models.JSONField()
 
+    description = models.CharField(max_length=1000, blank=True)
+
     def __str__(self):
         return self.github_str
 
     @property
     def github_url(self):
-        return 'https://github.com/{}/{}/commit/{}'.format(self.git_user, self.git_repo, self.git_commit)
+        return 'https://github.com/{}/{}/tree/{}'.format(self.git_user, self.git_repo, self.git_commit)
 
     @property
     def github_str(self):
-        return '{}/{}@{}'.format(self.git_user, self.git_repo, self.git_commit)
-
-    def dataset(self):
-        return self.record_information.get
+        return '{}/{}@{}'.format(self.git_user, self.git_repo, self.git_commit[:6])
 
 
 class Profile(models.Model):

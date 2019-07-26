@@ -1,9 +1,11 @@
 import json
 
-from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
+from django.db import DatabaseError
 from django.http import HttpResponseNotFound, HttpResponseBadRequest, HttpResponse, Http404
 from django.shortcuts import redirect, render
 from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_POST
 
 from dashboard.form import UploadForm
 from dashboard.models import *
@@ -67,34 +69,74 @@ def upload(request):
 
 def get(request):
     print(request.GET)
-    if 'id' not in request.GET:
-        return HttpResponseBadRequest('ID not exists')
+    rid = request.GET.get('rid', None)
+    if not rid:
+        raise Http404('ID does not exist')
+
     try:
-        r = Record.objects.get(id=request.GET["id"])
-    except Record.DoesNotExist as e:
-        return HttpResponseBadRequest('ID not exists')
+        record = Record.objects.get(id=rid)
+    except Record.DoesNotExist:
+        raise Http404('ID does not exist')
 
     res = {
-        'git': r.git_str(),
+        'id': record.id,
+        'user': record.user.username,
 
-        'entry': r.entry,
-        'args': r.args,
-        'working_dir': r.working_dir,
+        'entry': record.entry,
+        'args': record.args,
+        'working_dir': record.working_dir,
 
-        'record_information': r.record_information,
-        'result': r.result,
+        'git_user': record.git_user,
+        'git_repo': record.git_repo,
+        'git_commit': record.git_commit,
+
+        'record_information': record.record_information,
+        'result': record.result,
     }
     return HttpResponse(json.dumps(res))
 
 
 def show(request):
-    if 'id' not in request.GET:
-        raise Http404('Wrong format')
-    rid = request.GET['id']
+    rid = request.GET.get('id', None)
+    if not rid:
+        raise Http404('ID does not exist')
 
     try:
         record = Record.objects.get(id=rid)
-    except Record.DoesNotExist as e:
-        raise Http404('ID not exists')
+    except Record.DoesNotExist:
+        raise Http404('ID does not exist')
 
+    config = {
+        'entry': record.entry,
+        'args': record.args,
+        'working_dir': record.working_dir,
+    }
     return render(request, 'dashboard/show.html', locals())
+
+
+@login_required
+@require_POST
+def update(request):
+    rid = request.POST.get('id', None)
+    if not rid:
+        return HttpResponseBadRequest('ID does not exist')
+
+    try:
+        record = Record.objects.get(id=rid)
+    except Record.DoesNotExist:
+        return HttpResponseBadRequest('ID does not exist')
+
+    if record.user != request.user:
+        return HttpResponseBadRequest('You have no permission to do this')
+
+    description = request.POST.get('description', None)
+    if description:
+        try:
+            record.description = description
+            record.save()
+        except DatabaseError:
+            return HttpResponseBadRequest('Description too long')
+        return redirect('/show?id={}'.format(rid))
+
+    # No content
+    return HttpResponse(status=204)

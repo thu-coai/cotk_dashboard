@@ -8,28 +8,34 @@
   <div class="container">
     <div class="row">
       <div class="col-3">
-        <img src="https://via.placeholder.com/250?text=avatar" alt="avatar" class="img-fluid">
-      </div>
-      <div class="col-9">
-        <label for="token">Token</label>
-        <div class="input-group">
-          <input type="password" class="form-control" id="token" value="{{ request.user.profile.token }}" readonly>
-          <div class="input-group-append">
-            <button class="btn btn-outline-primary" type="button" id="toggle-token" data-toggle="tooltip"
-                    title="Show/hide"><i class="fa fa-eye"></i></button>
-            <button class="btn btn-outline-primary" type="button" id="copy-token" data-toggle="tooltip"
-                    title="Copy to clipboard"><i class="fa fa-copy"></i></button>
-          </div>
+        <img src="https://via.placeholder.com/250?text=avatar" alt="avatar" class="img-fluid mb-3">
+        <h2 class="mb-3">{{ request.user.username }}</h2>
+        <div>
+          <a href="{% url 'records' %}?uid={{ request.user.id }}" class="btn btn-primary">My records</a>
         </div>
-        <small class="form-text text-muted">
-          Your token for authentication.
-        </small>
-{#        <div class="alert alert-success my-3" id="alert-copied">#}
-{#          The token has been successfully copied to your clipboard.#}
-{#          <button class="close">#}
-{#            &times;#}
-{#          </button>#}
-{#        </div>#}
+      </div>
+
+      <div class="col-9">
+        <div class="form-group">
+          <label for="token">Token</label>
+          <div class="input-group">
+            <input type="password" class="form-control" id="token" value="{{ request.user.profile.token }}" readonly>
+            <div class="input-group-append">
+              <button class="btn btn-outline-primary" type="button" id="toggle-token" data-toggle="tooltip"
+                      title="Show/hide"><i class="fa fa-eye"></i></button>
+              <button class="btn btn-outline-primary" type="button" id="copy-token" data-toggle="tooltip"
+                      title="Copy to clipboard"><i class="fa fa-copy"></i></button>
+            </div>
+          </div>
+          <small class="form-text text-muted">
+            Your token for authentication.
+          </small>
+        </div>
+
+        <form id="regenerate-token" action="{% url 'regenerate_token' %}" method="post">
+          {% csrf_token %}
+          <button class="btn btn-danger" type="submit">Regenerate token</button>
+        </form>
       </div>
     </div>
   </div>
@@ -59,7 +65,13 @@
         $t.select();
         document.execCommand('copy');
         $t.remove();
-      })
+      });
+
+      $('#regenerate-token').submit(function (e) {
+        if (!window.confirm('Please confirm to regenerate your token.')) {
+          e.preventDefault();
+        }
+      });
     })
   </script>
 {% endblock %}
