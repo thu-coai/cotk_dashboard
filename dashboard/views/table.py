@@ -6,7 +6,7 @@ from django.shortcuts import render, reverse
 from django_datatables_view.base_datatable_view import BaseDatatableView
 from django.utils.html import escape
 
-import dashboard.views as views
+from .. import views
 from ..models import Record
 
 
