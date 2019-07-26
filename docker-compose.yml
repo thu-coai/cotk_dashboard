@@ -1,7 +1,6 @@
 version: "3"
 services:
   db:
-    container_name: mysql
     image: mysql:5.7
     ports:
       - "3306:3306"
@@ -11,17 +10,27 @@ services:
       - datavolume:/var/lib/mysql
 
   django:
-    container_name: django
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
+#    command: python manage.py runserver 0.0.0.0:8000
+    command: gunicorn --workers=2 --bind 0.0.0.0:8000 cotk_dashboard.wsgi:application
     volumes:
       - ./:/cotk_dashboard/
     ports:
       - "8000:8000"
-    depends_on:
-      - db
     env_file:
       - .env
+    depends_on:
+      - db
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./static:/static
+      - ./config/nginx:/etc/nginx/conf.d
+    depends_on:
+      - django
 volumes:
   datavolume:
 
