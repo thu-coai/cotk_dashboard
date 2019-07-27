@@ -4,3 +4,4 @@ mysqlclient
 django_mysql
 cryptography
 django-datatables-view
+gunicorn==19.9.0
