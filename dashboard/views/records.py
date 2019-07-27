@@ -19,6 +19,7 @@ def upload(request):
     print('uploading...')
     print(request.POST)
 
+    token = ''
     try:
         token = request.POST['token']
         user = User.objects.get(profile__token=token)
@@ -58,6 +59,8 @@ def upload(request):
 
         record_information=form.cleaned_data['record_information'],
         result=form.cleaned_data['result'],
+
+        file_id=next(iter(form.cleaned_data['record_information']['dataloader'].values()))['file_id']
     )
 
     record.save()

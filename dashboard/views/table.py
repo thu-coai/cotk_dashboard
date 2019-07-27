@@ -32,10 +32,10 @@ class RecordsJson(BaseDatatableView):
             try:
                 dataloader = dict(row.record_information['dataloader'])
                 name = next(iter(dataloader))
-                res = '{0} ({1})'.format(name, dataloader[name]['file_id'])
+                res = '<a href="{0}?dataset={1}">{1}</a> ({2})'.format(reverse(views.show), name, dataloader[name]['file_id'])
                 if len(dataloader) > 1:
                     res += '...'
-                return escape(res)
+                return res
             except:
                 return 'unknown'
         elif column == 'uploaded_at':
@@ -44,6 +44,8 @@ class RecordsJson(BaseDatatableView):
             data = row.result[column]
             if isinstance(data, float):
                 return '{0:.3f}'.format(data)
+            elif isinstance(data, str) and 'hash' in column:
+                return '{}...'.format(data[:6])
             return escape(json.dumps(data))
         else:
             return super(RecordsJson, self).render_column(row, column)
@@ -57,6 +59,12 @@ class RecordsJson(BaseDatatableView):
 
     def filter_queryset(self, qs: QuerySet):
         query_dict = self._querydict
+
+        dataset = query_dict.get('dataset', None)
+        if dataset:
+            qs = qs.filter(
+                record_information__dataloader__has_key=dataset
+            )
 
         username = query_dict.get('user', None)
         if username:
@@ -72,20 +80,15 @@ class RecordsJson(BaseDatatableView):
                 Q(git_commit__istartswith=github)
             )
 
-        dataset = query_dict.get('dataset', None)
-        if dataset:
-            qs = qs.annotate(
-                dataset_str=Cast(JSONExtract('record_information', '$.dataloader'), CharField())
-            ).filter(
-                dataset_str__icontains=dataset
+        file_id = query_dict.get('file_id', None)
+        if file_id:
+            qs = qs.filter(
+                file_id__iendswith=file_id
             )
 
         return qs
 
     def ordering(self, qs):
-        """ Get parameters from the request and prepare order by clause
-        """
-
         query_dict = self._querydict
 
         if 'order[0][column]' not in query_dict:
@@ -105,56 +108,18 @@ class RecordsJson(BaseDatatableView):
                 json_extract = json_extract.desc()
             return qs.order_by(json_extract)
 
-        # Number of columns that are used in sorting
-        # sorting_cols = 0
-        # if self.pre_camel_case_notation:
-        #     try:
-        #         sorting_cols = int(self._querydict.get('iSortingCols', 0))
-        #     except ValueError:
-        #         sorting_cols = 0
-        # else:
-        #     sort_key = 'order[{0}][column]'.format(sorting_cols)
-        #     while sort_key in self._querydict:
-        #         sorting_cols += 1
-        #         sort_key = 'order[{0}][column]'.format(sorting_cols)
-        #
-        # order = []
-        # order_columns = self.get_order_columns()
-        #
-        # for i in range(sorting_cols):
-        #     # sorting column
-        #     sort_dir = 'asc'
-        #     try:
-        #         if self.pre_camel_case_notation:
-        #             sort_col = int(self._querydict.get('iSortCol_{0}'.format(i)))
-        #             # sorting order
-        #             sort_dir = self._querydict.get('sSortDir_{0}'.format(i))
-        #         else:
-        #             sort_col = int(self._querydict.get('order[{0}][column]'.format(i)))
-        #             # sorting order
-        #             sort_dir = self._querydict.get('order[{0}][dir]'.format(i))
-        #     except ValueError:
-        #         sort_col = 0
-        #
-        #     sdir = '-' if sort_dir == 'desc' else ''
-        #     sortcol = order_columns[sort_col]
-        #
-        #     if isinstance(sortcol, list):
-        #         for sc in sortcol:
-        #             order.append('{0}{1}'.format(sdir, sc.replace('.', '__')))
-        #     else:
-        #         order.append('{0}{1}'.format(sdir, sortcol.replace('.', '__')))
-        #
-        # if order:
-        #     return qs.order_by(*order)
-        # return qs
-
 
 def records(request):
     username = request.GET.get('user', '')
+    file_id = request.GET.get('file_id', '')
+
     extra_columns = request.GET.get('extra_columns', None)
     if extra_columns:
         extra_columns = [s.strip() for s in extra_columns.split(',')]
     else:
         extra_columns = []
+
+    dataset = request.GET.get('dataset', '')
+
+    all_datasets = json.load(open('config/dataset_columns.json'))
     return render(request, 'dashboard/records.html', locals())

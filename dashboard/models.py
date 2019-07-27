@@ -23,6 +23,9 @@ class Record(models.Model):
     git_commit = models.CharField(max_length=40)
 
     record_information = mysql_models.JSONField(null=True, blank=True)
+
+    file_id = models.CharField(max_length=100, blank=True)
+
     result = mysql_models.JSONField()
 
     description = models.CharField(max_length=1000, blank=True)
