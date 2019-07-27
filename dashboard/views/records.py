@@ -19,6 +19,15 @@ def upload(request):
     print(request.POST)
 
     try:
+        token = request.POST['token']
+        user = User.objects.get(profile__token=token)
+    except User.DoesNotExist as e:
+        return HttpResponseBadRequest(json.dumps({
+            "code": "bad token",
+            "err": str(token),
+        }))
+
+    try:
         form = request.POST['data']
         form = json.loads(form)
         form = UploadForm(form)
@@ -26,15 +35,6 @@ def upload(request):
         return HttpResponseBadRequest(json.dumps({
             "code": "wrong format",
             "err": str(e)
-        }))
-
-    try:
-        token = request.POST['token']
-        user = User.objects.get(profile__token=token)
-    except User.DoesNotExist as e:
-        return HttpResponseBadRequest(json.dumps({
-            "code": "bad token",
-            "err": "token does not exist",
         }))
 
     if not form.is_valid():
