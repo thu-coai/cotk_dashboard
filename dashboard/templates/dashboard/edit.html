@@ -1,0 +1,41 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+
+{% block title %}
+  Record #{{ rid }} - edit
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h1 class="mr-auto mb-1">Record #{{ rid }}</h1>
+    <form method="post">
+      {% csrf_token %}
+      <input type="hidden" name="id" value="{{ rid }}">
+      {% bootstrap_form form %}
+      <div class="form-group form-check">
+        <input class="form-check-input" type="checkbox" value="" id="delete" name="delete">
+        <label class="form-check-label" for="delete">
+          Delete record (with caution!)
+        </label>
+      </div>
+      <div class="form-group d-flex">
+        <button type="submit" id="submit" class="btn btn-primary mr-auto">Submit</button>
+      </div>
+    </form>
+  </div>
+{% endblock %}
+
+{% block script %}
+  <script>
+    $(document).ready(function () {
+      $('#submit').click(function (e) {
+        if ($('#delete').prop('checked')) {
+          if (!window.confirm('Please confirm to delete record:')) {
+            e.preventDefault();
+          }
+        }
+      })
+    })
+  </script>
+{% endblock %}

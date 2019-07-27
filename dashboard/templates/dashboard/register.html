@@ -9,23 +9,6 @@
           {% endif %}
           {% csrf_token %}
           <h2 class="text-center">Register your account</h2>
-          {#              <div class="form-group">#}
-          {#                  {{ register_form.username.label_tag }}#}
-          {#                  {{ register_form.username}}#}
-          {#              </div>#}
-          {#              <div class="form-group">#}
-          {#                  {{ register_form.password1.label_tag }}#}
-          {#                  {{ register_form.password1 }}#}
-          {#              </div>#}
-          {#              <div class="form-group">#}
-          {#                  {{ register_form.password2.label_tag }}#}
-          {#                  {{ register_form.password2 }}#}
-          {#              </div>#}
-          {#              <div class="form-group">#}
-          {#                  {{ register_form.email.label_tag }}#}
-          {#                  {{ register_form.email }}#}
-          {#                  <span class="help-block">为了日后找回密码，请确保此邮箱可用</span>#}
-          {#              </div>#}
 
           {% load bootstrap4 %}
           {% bootstrap_form register_form %}

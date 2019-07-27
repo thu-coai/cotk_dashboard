@@ -14,18 +14,20 @@ class Record(models.Model):
     )
     uploaded_at = models.DateTimeField(auto_now_add=True)
 
-    entry = models.CharField(max_length=100)
-    args = mysql_models.JSONField(null=True)
+    entry = models.CharField(max_length=100, blank=True)
+    args = mysql_models.JSONField(null=True, blank=True)
     working_dir = models.CharField(max_length=50, blank=True)
 
     git_user = models.CharField(max_length=50)
     git_repo = models.CharField(max_length=50)
     git_commit = models.CharField(max_length=40)
 
-    record_information = mysql_models.JSONField(null=True)
+    record_information = mysql_models.JSONField(null=True, blank=True)
     result = mysql_models.JSONField()
 
     description = models.CharField(max_length=1000, blank=True)
+
+    hidden = models.BooleanField(default=False)
 
     def __str__(self):
         return self.github_str

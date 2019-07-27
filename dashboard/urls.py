@@ -10,6 +10,7 @@ urlpatterns = [
     path('get', views.get, name='get'),
     path('show', views.show, name='show'),
     path('update', views.update, name='update'),
+    path('edit', views.edit, name='edit'),
 
     path('regenerate_token', views.regenerate_token, name='regenerate_token'),
 

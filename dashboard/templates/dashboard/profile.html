@@ -16,6 +16,7 @@
       </div>
 
       <div class="col-9">
+        <h3>Token management</h3>
         <div class="form-group">
           <label for="token">Token</label>
           <div class="input-group">
@@ -35,6 +36,18 @@
         <form id="regenerate-token" action="{% url 'regenerate_token' %}" method="post">
           {% csrf_token %}
           <button class="btn btn-danger" type="submit">Regenerate token</button>
+        </form>
+
+        <hr class="my-3">
+
+        <form id="update-profile" method="post">
+          <h3>Update profile</h3>
+          {% if message %}
+            <div class="alert alert-warning">{{ message }}</div>
+          {% endif %}
+          {% csrf_token %}
+          {% bootstrap_form profile_form %}
+          <button type="submit" class="btn btn-primary">Submit</button>
         </form>
       </div>
     </div>

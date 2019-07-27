@@ -12,9 +12,10 @@ services:
   django:
     build: .
 #    command: python manage.py runserver 0.0.0.0:8000
-    command: gunicorn --workers=2 --bind 0.0.0.0:8000 cotk_dashboard.wsgi:application
+    command: gunicorn --reload --workers=2 --bind 0.0.0.0:8000 cotk_dashboard.wsgi:application
     volumes:
       - ./:/cotk_dashboard/
+      - ./static_root:/static
     ports:
       - "8000:8000"
     env_file:
@@ -27,7 +28,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./static:/static
+      - ./static_root:/static
       - ./config/nginx:/etc/nginx/conf.d
     depends_on:
       - django
