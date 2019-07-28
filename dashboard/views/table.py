@@ -32,7 +32,8 @@ class RecordsJson(BaseDatatableView):
             try:
                 dataloader = dict(row.record_information['dataloader'])
                 name = next(iter(dataloader))
-                res = '<a href="{0}?dataset={1}">{1}</a> ({2})'.format(reverse(views.show), name, dataloader[name]['file_id'])
+                res = '<a href="{0}?dataset={1}">{1}</a> ({2})'.format(reverse(views.show), name,
+                                                                       dataloader[name]['file_id'])
                 if len(dataloader) > 1:
                     res += '...'
                 return res
@@ -51,11 +52,16 @@ class RecordsJson(BaseDatatableView):
             return super(RecordsJson, self).render_column(row, column)
 
     def get_initial_queryset(self):
-        user = self.request.user
-        return Record.objects.filter(
-            Q(hidden=False) |
-            Q(user=user)
-        )
+        if self.request.user.is_authenticated:
+            user = self.request.user
+            return Record.objects.filter(
+                Q(hidden=False) |
+                Q(user=user)
+            )
+        else:
+            return Record.objects.filter(
+                hidden=False
+            )
 
     def filter_queryset(self, qs: QuerySet):
         query_dict = self._querydict
