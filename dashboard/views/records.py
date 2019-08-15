@@ -78,7 +78,7 @@ def upload(request):
 
 
 def get(request):
-    rid = request.GET.get('rid', None)
+    rid = request.GET.get('id', None)
     if not rid:
         raise Http404('ID does not exist')
 
