@@ -11,17 +11,14 @@ from dashboard.form import UploadForm, RecordEditForm
 from dashboard.models import *
 
 
+@require_POST
 @csrf_exempt
 def upload(request):
-    if request.method == 'GET':
-        return HttpResponseNotFound()
-
     print('uploading...')
     print(request.POST)
 
-    token = ''
+    token = request.POST.get('token', '')
     try:
-        token = request.POST['token']
         user = User.objects.get(profile__token=token)
     except User.DoesNotExist as e:
         return HttpResponseBadRequest(json.dumps({
@@ -29,24 +26,29 @@ def upload(request):
             "err": str(token),
         }))
 
+    form = request.POST.get('data', None)
+    if not form:
+        return HttpResponse(json.dumps({
+            'code': 'no data'
+        }))
+
     try:
-        form = request.POST['data']
         form = json.loads(form)
         form = UploadForm(form)
-    except Exception as e:
+    except json.JSONDecodeError as e:
         return HttpResponseBadRequest(json.dumps({
-            "code": "wrong format",
-            "err": str(e)
+            'code': 'wrong format',
+            'err': str(e),
         }))
 
     if not form.is_valid():
-        print(form.errors.as_json())
+        # print(form.errors.as_json())
         return HttpResponseBadRequest(json.dumps({
-            "code": "invalid form",
-            "err": form.errors.as_json(),
+            'code': 'unknown error',
+            'err': form.errors.as_json(),
         }))
 
-    record = Record(
+    record = Record.objects.create(
         user=user,
 
         entry=form.cleaned_data['entry'],
@@ -59,15 +61,19 @@ def upload(request):
 
         record_information=form.cleaned_data['record_information'],
         result=form.cleaned_data['result'],
-
-        file_id=next(iter(form.cleaned_data['record_information']['dataloader'].values()))['file_id']
     )
 
-    record.save()
+    for dataloader in form.cleaned_data['record_information']['dataloader']:
+        Dataloader.objects.create(
+            file_id=dataloader[0]['file_id'],
+            clsname=dataloader[0]['clsname'],
+
+            record=record,
+        )
 
     return HttpResponse(json.dumps({
-        "code": "ok",
-        "id": record.id,
+        'code': 'ok',
+        'id': record.id,
     }))
 
 

@@ -66,10 +66,10 @@ class RecordsJson(BaseDatatableView):
     def filter_queryset(self, qs: QuerySet):
         query_dict = self._querydict
 
-        dataset = query_dict.get('dataset', None)
-        if dataset:
+        dataloader = query_dict.get('dataloader', None)
+        if dataloader:
             qs = qs.filter(
-                record_information__dataloader__has_key=dataset
+                dataloader__file_id__icontains=dataloader
             )
 
         username = query_dict.get('user', None)
@@ -89,8 +89,8 @@ class RecordsJson(BaseDatatableView):
         file_id = query_dict.get('file_id', None)
         if file_id:
             qs = qs.filter(
-                file_id__iendswith=file_id
-            )
+                dataloader__file_id__icontains=file_id
+            ).distinct()
 
         return qs
 
@@ -125,7 +125,7 @@ def records(request):
     else:
         extra_columns = []
 
-    dataset = request.GET.get('dataset', '')
+    dataloader = request.GET.get('dataloader', '')
 
-    all_datasets = json.load(open('config/dataset_columns.json'))
+    all_dataloaders = json.load(open('config/columns.json'))
     return render(request, 'dashboard/records.html', locals())

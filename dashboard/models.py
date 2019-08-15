@@ -24,8 +24,6 @@ class Record(models.Model):
 
     record_information = mysql_models.JSONField(null=True, blank=True)
 
-    file_id = models.CharField(max_length=100, blank=True)
-
     result = mysql_models.JSONField()
 
     description = models.CharField(max_length=1000, blank=True)
@@ -42,6 +40,20 @@ class Record(models.Model):
     @property
     def github_str(self):
         return '{}/{}@{}'.format(self.git_user, self.git_repo, self.git_commit[:6])
+
+
+class Dataloader(models.Model):
+    file_id = models.CharField(max_length=100)
+
+    clsname = models.CharField(max_length=100)
+
+    record = models.ForeignKey(
+        Record,
+        on_delete=models.CASCADE
+    )
+
+    def __str__(self):
+        return '{} ({})'.format(self.clsname, self.file_id)
 
 
 class Profile(models.Model):
