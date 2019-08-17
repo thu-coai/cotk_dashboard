@@ -28,14 +28,14 @@ class RecordsJson(BaseDatatableView):
             return '<a href="{0}?uid={1}">{2}</a>'.format(reverse(views.records), row.user.id, row.user.username)
         elif column == 'github':
             return '<a href="{}">{}</a>'.format(row.github_url, row.github_str)
-        elif column == 'dataset':
+        elif column == 'dataloader':
             try:
-                dataloader = dict(row.record_information['dataloader'])
-                name = next(iter(dataloader))
-                res = '<a href="{0}?dataset={1}">{1}</a> ({2})'.format(reverse(views.show), name,
-                                                                       dataloader[name]['file_id'])
-                if len(dataloader) > 1:
-                    res += '...'
+                dataloader_list = list(row.record_information['dataloader'])
+                dataloader, _ = next(iter(dataloader_list))
+                res = '<a href="{0}?dataloader={1}">{1}</a> ({2})'.format(reverse(views.records), dataloader['clsname'],
+                                                                       dataloader['file_id'])
+                if len(dataloader_list) > 1:
+                    res += ' ...'
                 return res
             except:
                 return 'unknown'
@@ -46,7 +46,7 @@ class RecordsJson(BaseDatatableView):
             if isinstance(data, float):
                 return '{0:.3f}'.format(data)
             elif isinstance(data, str) and 'hash' in column:
-                return '{}...'.format(data[:6])
+                return '{}'.format(data[:6])
             return escape(json.dumps(data))
         else:
             return super(RecordsJson, self).render_column(row, column)
@@ -116,7 +116,7 @@ class RecordsJson(BaseDatatableView):
 
 
 def records(request):
-    username = request.GET.get('user', '')
+    username = request.GET.get('username', '')
     file_id = request.GET.get('file_id', '')
 
     extra_columns = request.GET.get('extra_columns', None)
