@@ -32,7 +32,7 @@ class RecordsJson(BaseDatatableView):
             try:
                 dataloader = dict(row.record_information['dataloader'])
                 name = next(iter(dataloader))
-                res = '<a href="{0}?dataset={1}">{1}</a> ({2})'.format(reverse(views.show), name,
+                res = '<a href="{0}?dataset={1}">{1}</a> ({2})'.format(reverse(views.records), name,
                                                                        dataloader[name]['file_id'])
                 if len(dataloader) > 1:
                     res += '...'
