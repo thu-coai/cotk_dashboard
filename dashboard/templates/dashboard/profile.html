@@ -11,7 +11,7 @@
         <img src="https://via.placeholder.com/250?text=avatar" alt="avatar" class="img-fluid mb-3">
         <h2 class="mb-3">{{ request.user.username }}</h2>
         <div>
-          <a href="{% url 'records' %}?uid={{ request.user.id }}" class="btn btn-primary">My records</a>
+          <a href="{% url 'records' %}?username={{ request.user.username }}" class="btn btn-primary">My records</a>
         </div>
       </div>
 
@@ -36,6 +36,9 @@
         <form id="regenerate-token" action="{% url 'regenerate_token' %}" method="post">
           {% csrf_token %}
           <button class="btn btn-danger" type="submit">Regenerate token</button>
+          <small class="form-text text-muted">
+            Your old token will be invalidated. This action can not be undone.
+          </small>
         </form>
 
         <hr class="my-3">
@@ -81,7 +84,7 @@
       });
 
       $('#regenerate-token').submit(function (e) {
-        if (!window.confirm('Please confirm to regenerate your token.')) {
+        if (!window.confirm('Please confirm to regenerate your token. Your old token will be invalidated. This action can not be undone.')) {
           e.preventDefault();
         }
       });
