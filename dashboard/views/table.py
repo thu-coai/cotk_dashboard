@@ -116,7 +116,7 @@ class RecordsJson(BaseDatatableView):
 
 
 def records(request):
-    username = request.GET.get('user', '')
+    username = request.GET.get('username', '')
     file_id = request.GET.get('file_id', '')
 
     extra_columns = request.GET.get('extra_columns', None)
