@@ -10,8 +10,8 @@
       <div class="col-12">
         <form method="get">
           <div class="form-group">
-            <label for="select-dataset">Dataset:</label>
-            <select class="form-control" id="select-dataset" name="dataset">
+            <label for="select-dataloader">Dataloader:</label>
+            <select class="form-control" id="select-dataloader" name="dataloader">
               <option value="">(all)</option>
             </select>
           </div>
@@ -67,7 +67,7 @@
             <th id="col-id">ID</th>
             <th id="col-user">User</th>
             <th id="col-github">Github commit</th>
-            <th id="col-dataset">Dataset</th>
+            <th id="col-dataloader">Dataloader</th>
             {% for col in extra_columns %}
               <th>{{ col }}</th>
             {% endfor %}
@@ -82,7 +82,7 @@
 {% endblock %}
 
 {% block script %}
-  {{ all_datasets|json_script:"all-datasets" }}
+  {{ all_dataloaders|json_script:"all-dataloaders" }}
   <script>
     $(document).ready(function () {
       let datatable = $('#table').DataTable({
@@ -96,7 +96,7 @@
             user: () => $('#user').val(),
             github: () => $('#github').val(),
             file_id: () => $('#file-id').val(),
-            dataset: '{{ dataset|escapejs }}',
+            dataloader: '{{ dataloader|escapejs }}',
           }
         },
         columns: [
@@ -111,7 +111,7 @@
             orderable: false,
           },
           {
-            name: 'dataset',
+            name: 'dataloader',
             orderable: false,
           },
           {% for col in extra_columns %}
@@ -131,28 +131,28 @@
         datatable.ajax.reload();
       });
 
-      let all_datasets = JSON.parse($('#all-datasets').text());
-      let $select_dataset = $('#select-dataset');
+      let all_dataloaders = JSON.parse($('#all-dataloaders').text());
+      let $select_dataloader = $('#select-dataloader');
       let $extra_columns = $('#extra-columns');
-      Object.keys(all_datasets).forEach(function (key) {
-        $select_dataset.append(
+      Object.keys(all_dataloaders).forEach(function (key) {
+        $select_dataloader.append(
           $('<option></option>').text(key)
         )
       });
 
-      $select_dataset.on('change', function () {
+      $select_dataloader.on('change', function () {
         console.log(this.value);
-        if (this.value in all_datasets) {
+        if (this.value in all_dataloaders) {
           $extra_columns.val(
-            all_datasets[this.value].join()
+            all_dataloaders[this.value].join()
           );
         } else {
           $extra_columns.val('');
         }
       });
 
-      {% if dataset %}
-        $select_dataset.val('{{ dataset|escapejs }}').change();
+      {% if dataloader %}
+        $select_dataloader.val('{{ dataloader|escapejs }}').change();
       {% endif %}
     })
   </script>
