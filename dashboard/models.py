@@ -1,3 +1,5 @@
+from django.utils import timezone
+
 from django.db import models
 
 import django_mysql.models as mysql_models
@@ -12,7 +14,7 @@ class Record(models.Model):
         User,
         on_delete=models.CASCADE
     )
-    uploaded_at = models.DateTimeField(auto_now_add=True)
+    uploaded_at = models.DateTimeField(default=timezone.now)
 
     entry = models.CharField(max_length=100, blank=True)
     args = mysql_models.JSONField(null=True, blank=True)
