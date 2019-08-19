@@ -16,7 +16,7 @@
 
   <script src="{% static 'lib/jquery-3.2.1/jquery-3.2.1.js' %}"></script>
   <script src="{% static 'lib/bootstrap-4.3.1-dist/js/bootstrap.bundle.js' %}"></script>
-  <script src="{% static 'lib/DataTables/datatables.js'%}"></script>
+  <script src="{% static 'lib/DataTables/datatables.js' %}"></script>
   <script src="{% static 'lib/jquery-3.2.1/jquery.json-viewer.js' %}"></script>
 
   {% bootstrap_messages %}
@@ -76,6 +76,15 @@
 </nav>
 
 {% block content %}{% endblock %}
+
+<footer class="my-5">
+    <hr>
+    <p class="py-2 text-center text-muted">
+      © 2019.
+      <a href="http://coai.cs.tsinghua.edu.cn/" target="_Blank">CoAI</a>
+      All rights reserved.
+    </p>
+</footer>
 
 {% block script %}{% endblock %}
 </body>

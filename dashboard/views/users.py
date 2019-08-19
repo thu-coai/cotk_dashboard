@@ -39,11 +39,17 @@ def register(request):
                 email=email,
                 password=password1
             )
-            profile = Profile(
+
+            # The first user will become an admin
+            if user.id == 1:
+                user.is_superuser = True
+                user.is_staff = True
+                user.save()
+
+            profile = Profile.objects.create(
                 user=user,
                 token=random_str(16)
             )
-            profile.save()
 
             return redirect('login')
 
