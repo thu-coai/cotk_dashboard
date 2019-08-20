@@ -27,7 +27,16 @@ then run
 
 ## Configuration
 
-All configuration files are under the `config` folder.
+For production use, you should edit the `.env` file under the root directory.
+
+Other configuration files are under the `config` directory.
+
+### ENV
+
+When in production mode,
+
+* change the password for database and the secret key (to some random generated string)
+* delete `DEBUG=TRUE` and `PYTHONBUFFERED=TRUE`
 
 ### Nginx
 
