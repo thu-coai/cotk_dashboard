@@ -1,28 +1,37 @@
-version: "2"
+version: "3"
 services:
   db:
-    container_name: mysql
-    image: mysql/mysql-server
+    image: mysql:5.7
     ports:
       - "3306:3306"
-    environment:
-      - MYSQL_ROOT_PASSWORD=itsasecret
+    env_file:
+      - .env
     volumes:
-      - ./dashboard_mysql.sql:/docker-entrypoint-initdb.d/dump.sql
+      - datavolume:/var/lib/mysql
 
   django:
-    container_name: django
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: docker_tutorial_django
-    stdin_open: true
-    tty: true
+    build: .
+#    command: python manage.py runserver 0.0.0.0:8000
+    command: gunicorn --reload --workers=2 --bind 0.0.0.0:8000 cotk_dashboard.wsgi:application
     volumes:
-      - ./:/var/www/cotk_dashboard/
+      - ./:/cotk_dashboard/
+      - ./static_root:/static
     ports:
       - "8000:8000"
-    links:
+    env_file:
+      - .env
+    depends_on:
       - db
-    environment:
-      - DATABASE_URL=mysql://root:itsasecret@db:3306/docker_tutorial_django_db
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./static_root:/static
+      - ./config/nginx:/etc/nginx/conf.d
+    depends_on:
+      - django
+volumes:
+  datavolume:
+

@@ -1,0 +1,70 @@
+{% extends 'dashboard/base.html' %}
+
+{% block title %}
+  Record #{{ rid }} - show
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h1 class="mr-auto mb-1">
+      Record #{{ rid }} {% if record.hidden %}(hidden){% endif %}
+      {% if record.user == request.user %}
+        <a href="{% url 'edit' %}?id={{ rid }}" class="btn btn-outline-primary">Edit</a>
+      {% endif %}
+    </h1>
+    <div class="mb-3">
+      Uploaded by
+      <a href="{% url 'records' %}?username={{ record.user }}">{{ record.user }}</a>
+    </div>
+    <div class="list-group">
+      <div class="list-group-item">
+        <h5 class="mb-1">Github commit</h5>
+        <a href="{{ record.github_url }}">{{ record.github_str }}</a>
+      </div>
+
+      <div class="list-group-item">
+        <h5 class="mb-1">Result</h5>
+        <pre id="result"></pre>
+      </div>
+
+      <div class="list-group-item">
+        <h5 class="mb-1">Description</h5>
+        {{ record.description }}
+      </div>
+
+      <div class="list-group-item">
+        <h5 class="mb-1">Record information</h5>
+        <pre id="info"></pre>
+      </div>
+
+      <div class="list-group-item">
+        <h5 class="mb-1">Config</h5>
+        <pre id="config"></pre>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block script %}
+  {{ record.result|json_script:"result-json" }}
+  {{ record.record_information|json_script:"info-json" }}
+  {{ config|json_script:"config-json" }}
+  <script>
+    $(document).ready(function () {
+      $('#result').jsonViewer(JSON.parse($('#result-json').text()), {
+        withQuotes: true,
+        withLinks: false
+      });
+
+      $('#info').jsonViewer(JSON.parse($('#info-json').text()), {
+        withQuotes: true,
+        withLinks: false
+      });
+
+      $('#config').jsonViewer(JSON.parse($('#config-json').text()), {
+        withQuotes: true,
+        withLinks: false
+      });
+    });
+  </script>
+{% endblock %}

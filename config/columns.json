@@ -1,0 +1,14 @@
+{
+  "MSCOCO": [
+    "fw-bw-bleu",
+    "fw-bw-bleu hashvalue",
+    "self-bleu",
+    "self-bleu hashvalue"
+  ],
+  "OpenSubtitles": [
+    "perplexity",
+    "perplexity hashvalue",
+    "bleu",
+    "bleu hashvalue"
+  ]
+}

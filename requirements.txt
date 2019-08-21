@@ -1,4 +1,7 @@
-Django
+Django==2.2.3
+django-bootstrap4
 mysqlclient
 django_mysql
 cryptography
+django-datatables-view
+gunicorn==19.9.0

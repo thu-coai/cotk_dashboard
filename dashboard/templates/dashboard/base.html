@@ -1,60 +1,91 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title %}Thu-cotk_dashboard{% endblock %}</title>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Thu-cotk_dashboard{% endblock %}</title>
 
-    <!-- Bootstrap -->
-    <link href="../../../static/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+  {% load static %}
+  {% load bootstrap4 %}
+
+  <link rel="stylesheet" href="{% static 'lib/bootstrap-4.3.1-dist/css/bootstrap.css' %}">
+  <link rel="stylesheet" href="{% static 'lib/fontawesome/css/all.css' %}">
+  <link rel="stylesheet" href="{% static 'lib/DataTables/datatables.css' %}">
+  <link rel="stylesheet" href="{% static 'lib/jquery-3.2.1/jquery.json-viewer.css' %}">
+
+  <script src="{% static 'lib/jquery-3.2.1/jquery-3.2.1.js' %}"></script>
+  <script src="{% static 'lib/bootstrap-4.3.1-dist/js/bootstrap.bundle.js' %}"></script>
+  <script src="{% static 'lib/DataTables/datatables.js' %}"></script>
+  <script src="{% static 'lib/jquery-3.2.1/jquery.json-viewer.js' %}"></script>
+
+  {% bootstrap_messages %}
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
       <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <link rel="stylesheet" href="../../../static/bootstrap-table/bootstrap-table.min.css">
-    {% block css %}{% endblock %}
-  </head>
-  <body>
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#my-nav" aria-expanded="false">
-            <span class="sr-only">切换导航条</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Dashboard</a>
-        </div>
+  <![endif]-->
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="my-nav">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="/">主页</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-              {% if request.session.is_login %}
-                  <li><a href="#">欢迎: {{ request.session.username }}</a></li>
-                  <li><a href="/logout">登出</a></li>
-              {% else %}
-                  <li><a href="/login">登录</a></li>
-                  <li><a href="/register">注册</a></li>
-              {% endif %}
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-    {% block content %}{% endblock %}
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="../../../static/jquery-3.2.1/jquery-3.2.1.min.js"></script>
-    <script src="../../../static/jquery-3.2.1/jquery-3.2.1.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../../../static/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-    <script src="../../../static/bootstrap-table/bootstrap-table.min.js"></script>
-    {% block script %}{% endblock %}
-  </body>
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+  {% block css %}{% endblock %}
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-3">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#my-nav"
+              aria-expanded="false">
+      </button>
+      <a class="navbar-brand" href="{% url 'index' %}">Dashboard</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="my-nav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'index' %}">Home</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'records' %}">Records</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        {% if request.user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'profile' %}">{{ request.user.username }}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}">Log out</a>
+          </li>
+        {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}">Log in</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'register' %}">Sign up</a>
+          </li>
+        {% endif %}
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+{% block content %}{% endblock %}
+
+<footer class="my-5">
+    <hr>
+    <p class="py-2 text-center text-muted">
+      © 2019.
+      <a href="http://coai.cs.tsinghua.edu.cn/" target="_Blank">CoAI</a>
+      All rights reserved.
+    </p>
+</footer>
+
+{% block script %}{% endblock %}
+</body>
 </html>

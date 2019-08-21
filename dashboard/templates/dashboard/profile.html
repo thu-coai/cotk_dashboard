@@ -1,0 +1,93 @@
+{% extends 'dashboard/base.html' %}
+{% load bootstrap4 %}
+{% block title %}
+  {{ request.user.username }} - Profile
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-3">
+        <img src="https://via.placeholder.com/250?text=avatar" alt="avatar" class="img-fluid mb-3">
+        <h2 class="mb-3">{{ request.user.username }}</h2>
+        <div>
+          <a href="{% url 'records' %}?username={{ request.user.username }}" class="btn btn-primary">My records</a>
+        </div>
+      </div>
+
+      <div class="col-9">
+        <h3>Token management</h3>
+        <div class="form-group">
+          <label for="token">Token</label>
+          <div class="input-group">
+            <input type="password" class="form-control" id="token" value="{{ request.user.profile.token }}" readonly>
+            <div class="input-group-append">
+              <button class="btn btn-outline-primary" type="button" id="toggle-token" data-toggle="tooltip"
+                      title="Show/hide"><i class="fa fa-eye"></i></button>
+              <button class="btn btn-outline-primary" type="button" id="copy-token" data-toggle="tooltip"
+                      title="Copy to clipboard"><i class="fa fa-copy"></i></button>
+            </div>
+          </div>
+          <small class="form-text text-muted">
+            Your token for authentication.
+          </small>
+        </div>
+
+        <form id="regenerate-token" action="{% url 'regenerate_token' %}" method="post">
+          {% csrf_token %}
+          <button class="btn btn-danger" type="submit">Regenerate token</button>
+          <small class="form-text text-muted">
+            Your old token will be invalidated. This action can not be undone.
+          </small>
+        </form>
+
+        <hr class="my-3">
+
+        <form id="update-profile" method="post">
+          <h3>Update profile</h3>
+          {% if message %}
+            <div class="alert alert-warning">{{ message }}</div>
+          {% endif %}
+          {% csrf_token %}
+          {% bootstrap_form profile_form %}
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block script %}
+  <script>
+    $(document).ready(function () {
+      $('[data-toggle="tooltip"]').tooltip();
+
+      $('.close').click(function () {
+        $(this).closest('.alert').hide();
+      });
+
+      let $token = $('#token');
+
+      $('#toggle-token').click(function () {
+        $token.prop(
+          'type',
+          $token.prop('type') === 'text' ? 'password' : 'text'
+        );
+      });
+
+      $('#copy-token').click(function () {
+        let $t = $('<input>');
+        $t.val($token.val()).select().appendTo($('body'));
+        $t.select();
+        document.execCommand('copy');
+        $t.remove();
+      });
+
+      $('#regenerate-token').submit(function (e) {
+        if (!window.confirm('Please confirm to regenerate your token. Your old token will be invalidated. This action can not be undone.')) {
+          e.preventDefault();
+        }
+      });
+    })
+  </script>
+{% endblock %}
