@@ -36,6 +36,7 @@ Other configuration files are under the `config` directory.
 When in production mode,
 
 * change the password for database and the secret key (to some random generated string)
+* set your domain to DASHBOARD_HOST
 * delete `DEBUG=TRUE` and `PYTHONBUFFERED=TRUE`
 
 ### Nginx
