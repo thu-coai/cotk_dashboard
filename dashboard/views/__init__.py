@@ -10,6 +10,6 @@ def index(request):
     token = ""
     if user.is_authenticated:
         token = user.first_name
-    print('user={}'.format(user))
-    print('token={}'.format(token))
+    #print('user={}'.format(user))
+    #print('token={}'.format(token))
     return render(request, 'dashboard/index.html', locals())
