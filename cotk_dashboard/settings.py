@@ -40,9 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'dashboard',
     'django.contrib.staticfiles',
     'bootstrap4',
-    'dashboard.apps.DashboardConfig'
+    #'dashboard.apps.DashboardConfig'
 ]
 
 MIDDLEWARE = [
@@ -53,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'dashboard.templatetags.static.SettingsStaticRoot',
 ]
 
 ROOT_URLCONF = 'cotk_dashboard.urls'
