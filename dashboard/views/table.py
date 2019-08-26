@@ -15,13 +15,15 @@ from ..models import Record
 class RecordsJson(BaseDatatableView):
     model = Record
 
-    # columns = ['id', 'user', 'github', 'dataset', 'uploaded_at']
+    columns = ['id', 'user', 'github', 'dataset', 'uploaded_at']
 
-    # order_columns = ['id', '', '', '', 'uploaded_at']
+    order_columns = ['id', '', '', '', 'uploaded_at']
 
     max_display_length = 50
 
     def render_column(self, row: Record, column):
+        print(column)
+        print("!!!!!!!!!!!!!!!")
         if column == 'id':
             return '<a href="{0}?id={1}">#{1}</a>'.format(reverse(views.show), row.id)
         elif column == 'user':
