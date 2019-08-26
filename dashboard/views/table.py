@@ -15,9 +15,9 @@ from ..models import Record
 class RecordsJson(BaseDatatableView):
     model = Record
 
-    # columns = ['id', 'user', 'github', 'dataset', 'uploaded_at']
+    #columns = ['id', 'user', 'github', 'dataloader', 'uploaded_at']
 
-    # order_columns = ['id', '', '', '', 'uploaded_at']
+    #order_columns = ['id', '', '', '', 'uploaded_at']
 
     max_display_length = 50
 
